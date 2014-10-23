@@ -5,7 +5,8 @@ public class MainPlayerController : MonoBehaviour {
 	//public WorldMeshGenerator wg;
 	// Use this for initialization
 	void Start () {
-	
+		System.Action<IEventType> callback = Event_Test_Handler;
+		EventMgr.It.register(new Event_Test(),callback);
 	}
 	
 
@@ -14,8 +15,10 @@ public class MainPlayerController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E)) {
 			//Debug.Log("space enter");
 			//DestroyBlock(new Vector2(transform.position.x, transform.position.y));
-
-			RaycastHit hit;
+			Event_Test evnt = new Event_Test();
+			evnt.position = transform.position;
+			EventMgr.It.queueEvent(evnt);
+			/**RaycastHit hit;
 			Vector3 target = transform.position;
 			target.z += 15;
 			float distance=Vector3.Distance(transform.position,target);
@@ -33,9 +36,33 @@ public class MainPlayerController : MonoBehaviour {
 			} else {
 				//Debug.DrawLine(transform.position,target,Color.blue);
 				//Debug.Log("miss");
-			}		
+			}		**/
 
 		}
+	}
+
+	private void Event_Test_Handler(IEventType evnt){
+		Debug.Log("in handler");
+		Event_Test m_evnt = evnt as Event_Test;
+		RaycastHit hit;
+		Vector3 target = m_evnt.position;
+		target.z += 15;
+		float distance=Vector3.Distance(m_evnt.position,target);
+		
+		if( Physics.Raycast(m_evnt.position, (target -
+		                                      m_evnt.position).normalized, out hit, distance)){
+			
+			//Debug.DrawLine(transform.position,hit.point,Color.red);
+			if(hit.collider.gameObject.tag == "Voxel"){
+				Vector2 point= new Vector2(hit.point.x, hit.point.y); 
+				DestroyBlock(point);
+			}
+			//Debug.Log("hit");
+			
+		} else {
+			//Debug.DrawLine(transform.position,target,Color.blue);
+			//Debug.Log("miss");
+		}		
 	}
 
 	void DestroyBlock(Vector2 point){

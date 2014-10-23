@@ -19,10 +19,12 @@ public class Global : MonoBehaviour {
 	private ProtocalMgr m_ProtocalMgr;
 	//private SceneMgr m_SceneMgr;
 	private BundleMgr m_BundleMgr;
+	private EventMgr m_EventMgr;
 
 	public NetMgr NetMgr{get{return m_NetMgr;}}
 	public ProtocalMgr ProtocalMgr{get{return m_ProtocalMgr;}}
 	//public SceneMgr SceneMgr{get{return m_SceneMgr;}}
+	public EventMgr SceneMgr{get{return m_EventMgr;}}
 	public BundleMgr BundleMgr{get{return m_BundleMgr;}}
 	void Awake(){
 		//It = this;
@@ -33,6 +35,9 @@ public class Global : MonoBehaviour {
 #if DEBUG
 		m_bDebugMode = true;
 #endif
+
+		//init eventmgr
+		m_EventMgr = __CreateMgr<EventMgr> ();
 	}
 
 	void Start () {
