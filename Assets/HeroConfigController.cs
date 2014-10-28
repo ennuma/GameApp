@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class HeroConfigController : MonoBehaviour {
-
+	//public GameObject heroView;
+	//public GameObject scrollView;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +14,9 @@ public class HeroConfigController : MonoBehaviour {
 	
 	}
 
-	public void SwitchToSelectHero(){
+	/**public void SwitchToSelectHero(){
 		Debug.Log("slect hero");
-	}
+		heroView.SetActive (false);
+		scrollView.SetActive (true);
+	}**/
 }
