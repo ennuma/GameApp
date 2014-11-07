@@ -1,0 +1,260 @@
+{"frames": {
+
+"bar.png":
+{
+	"frame": {"x":825,"y":1692,"w":290,"h":12},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":58,"y":65,"w":290,"h":12},
+	"sourceSize": {"w":407,"h":139}
+},
+"battlebg.png":
+{
+	"frame": {"x":2,"y":2,"w":1148,"h":649},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":109,"w":1148,"h":649},
+	"sourceSize": {"w":1181,"h":886}
+},
+"bg.png":
+{
+	"frame": {"x":2,"y":653,"w":1140,"h":641},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":113,"w":1140,"h":641},
+	"sourceSize": {"w":1181,"h":886}
+},
+"blackcircle.png":
+{
+	"frame": {"x":194,"y":1762,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":20,"w":58,"h":57},
+	"sourceSize": {"w":91,"h":100}
+},
+"blade.png":
+{
+	"frame": {"x":979,"y":1850,"w":48,"h":61},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":16,"w":48,"h":61},
+	"sourceSize": {"w":91,"h":100}
+},
+"block.png":
+{
+	"frame": {"x":942,"y":1872,"w":35,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":222,"y":43,"w":35,"h":35},
+	"sourceSize": {"w":509,"h":148}
+},
+"blood.png":
+{
+	"frame": {"x":1090,"y":1458,"w":38,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":22,"w":38,"h":50},
+	"sourceSize": {"w":91,"h":100}
+},
+"blueblock.png":
+{
+	"frame": {"x":1100,"y":1296,"w":50,"h":60},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":294,"y":51,"w":50,"h":60},
+	"sourceSize": {"w":692,"h":170}
+},
+"bluebt.png":
+{
+	"frame": {"x":825,"y":1458,"w":263,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":105,"y":173,"w":263,"h":76},
+	"sourceSize": {"w":447,"h":449}
+},
+"bluecircle.png":
+{
+	"frame": {"x":254,"y":1762,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":21,"w":58,"h":57},
+	"sourceSize": {"w":91,"h":100}
+},
+"button.png":
+{
+	"frame": {"x":825,"y":1614,"w":258,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":32,"w":258,"h":76},
+	"sourceSize": {"w":302,"h":125}
+},
+"characterpanel.png":
+{
+	"frame": {"x":2,"y":1762,"w":190,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":34,"w":190,"h":149},
+	"sourceSize": {"w":262,"h":218}
+},
+"check.png":
+{
+	"frame": {"x":1090,"y":1562,"w":55,"h":41},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":32,"w":55,"h":41},
+	"sourceSize": {"w":85,"h":110}
+},
+"checkbox.png":
+{
+	"frame": {"x":1090,"y":1510,"w":50,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":163,"y":217,"w":50,"h":50},
+	"sourceSize": {"w":531,"h":446}
+},
+"circle.png":
+{
+	"frame": {"x":906,"y":1800,"w":71,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":55,"y":24,"w":71,"h":70},
+	"sourceSize": {"w":509,"h":148}
+},
+"dragon.png":
+{
+	"frame": {"x":906,"y":1872,"w":34,"h":39},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":152,"y":89,"w":34,"h":39},
+	"sourceSize": {"w":509,"h":148}
+},
+"greencircle.png":
+{
+	"frame": {"x":314,"y":1762,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":22,"w":58,"h":57},
+	"sourceSize": {"w":91,"h":100}
+},
+"hint.png":
+{
+	"frame": {"x":194,"y":1822,"w":710,"h":78},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":21,"w":710,"h":78},
+	"sourceSize": {"w":741,"h":125}
+},
+"level.png":
+{
+	"frame": {"x":1097,"y":1706,"w":42,"h":41},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":30,"w":42,"h":41},
+	"sourceSize": {"w":91,"h":100}
+},
+"logmenu.png":
+{
+	"frame": {"x":2,"y":1296,"w":453,"h":411},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":44,"y":35,"w":453,"h":411},
+	"sourceSize": {"w":531,"h":446}
+},
+"middlebar.png":
+{
+	"frame": {"x":457,"y":1296,"w":641,"h":89},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":37,"w":641,"h":89},
+	"sourceSize": {"w":692,"h":170}
+},
+"orange.png":
+{
+	"frame": {"x":374,"y":1762,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":20,"w":58,"h":57},
+	"sourceSize": {"w":91,"h":100}
+},
+"panel.png":
+{
+	"frame": {"x":457,"y":1387,"w":366,"h":360},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":48,"y":38,"w":366,"h":360},
+	"sourceSize": {"w":447,"h":449}
+},
+"purplebt.png":
+{
+	"frame": {"x":825,"y":1536,"w":263,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":105,"y":67,"w":263,"h":76},
+	"sourceSize": {"w":447,"h":449}
+},
+"rectbar.png":
+{
+	"frame": {"x":2,"y":1709,"w":449,"h":51},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":35,"w":449,"h":51},
+	"sourceSize": {"w":509,"h":148}
+},
+"redcircle.png":
+{
+	"frame": {"x":979,"y":1787,"w":61,"h":61},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":21,"w":61,"h":61},
+	"sourceSize": {"w":85,"h":110}
+},
+"shield.png":
+{
+	"frame": {"x":1042,"y":1787,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":20,"w":58,"h":57},
+	"sourceSize": {"w":91,"h":100}
+},
+"username.png":
+{
+	"frame": {"x":825,"y":1387,"w":287,"h":69},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":168,"y":141,"w":287,"h":69},
+	"sourceSize": {"w":531,"h":446}
+},
+"white.png":
+{
+	"frame": {"x":453,"y":1749,"w":358,"h":71},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":34,"w":358,"h":71},
+	"sourceSize": {"w":407,"h":139}
+},
+"whiteflag.png":
+{
+	"frame": {"x":978,"y":1706,"w":117,"h":79},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":34,"y":40,"w":117,"h":79},
+	"sourceSize": {"w":195,"h":152}
+},
+"woniu.png":
+{
+	"frame": {"x":825,"y":1706,"w":151,"h":92},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":65,"y":29,"w":151,"h":92},
+	"sourceSize": {"w":407,"h":139}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "loginAndBattle.png",
+	"format": "RGBA8888",
+	"size": {"w":1152,"h":1913},
+	"scale": "0.5",
+	"smartupdate": "$TexturePacker:SmartUpdate:fa69bce3ff3dbd55c960e8ead6f43780:eee099d05c7168adacd510b2b6794464:7106b4f344484c575cf61dd781d2642d$"
+}
+}
