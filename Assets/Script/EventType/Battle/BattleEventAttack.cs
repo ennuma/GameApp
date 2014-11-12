@@ -15,24 +15,18 @@ public class BattleEventAttack:BattleEvent
 	 * self id
 	 * rhythm_quality: perfect(0)/great(1)/normal(2)/bad(3)
 	 **/
-
+	public string m_type = "BATTLEEVENTATTACK";
 	public BattleEventAttack ()
 	{
-		type = "battle event attack";
+		//type = "battle event attack";
 	}
 	public string type
 	{
-		get { return type; }
-		set { type = value; }
+		get { return m_type; }
+		set { m_type = value; }
 	}
-	public int self_id{
-		get { return self_id;}
-		set { self_id = value;}
-	}
-	public int rhythm_quality{
-		get{ return rhythm_quality;}
-		set{ rhythm_quality = value;}
-	}
+	public int self_id;
+	public int rhythm_quality;
 
 }
 

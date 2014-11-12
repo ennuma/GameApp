@@ -40,8 +40,8 @@ public class EventMgr : MonoBehaviour
 				nextQueue.Enqueue(evnt);
 				continue;
 			}
-			Debug.Log(((Event_Test)evnt).position);
-			Debug.Log(m_EventFunctionMap.Keys.ToString());
+//			Debug.Log(((Event_Test)evnt).position);
+//			Debug.Log(m_EventFunctionMap.Keys.ToString());
 			List<System.Action<IEventType>> callback_list = m_EventFunctionMap[evnt.type];
 			if(callback_list == null){
 				Debug.Log("Event is not registered yet");

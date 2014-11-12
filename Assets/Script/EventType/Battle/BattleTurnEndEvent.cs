@@ -11,14 +11,16 @@ using System;
 
 public class BattleTurnEndEvent: IEventType
 {
+	public string m_type = "BATTLETURNENDEVENT";
+
 	public BattleTurnEndEvent ()
 	{
-		type = "battle turn end event";
+		//type = "battle turn end event";
 	}
 	public string type
 	{
-		get { return type; }
-		set { type = value; }
+		get { return m_type; }
+		set { m_type = value; }
 	}
 }
 

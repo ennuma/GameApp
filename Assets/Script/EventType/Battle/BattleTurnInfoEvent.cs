@@ -34,17 +34,18 @@ using System.Collections.Generic;
  **/
 public class BattleTurnInfoEvent:IEventType
 {
-	Dictionary<int, Dictionary<string, int>> dictionary =
+	public Dictionary<int, Dictionary<string, int>> dictionary =
 		new Dictionary<int, Dictionary<string, int>>();
+	public string m_type = "BATTLETURNINFOEVENT";
 
 	public BattleTurnInfoEvent ()
 	{
-		type = "battle turn infor event";
+		//type = "battle turn infor event";
 	}
 	public string type
 	{
-		get { return type; }
-		set { type = value; }
+		get { return m_type; }
+		set { m_type = value; }
 	}
 }
 
