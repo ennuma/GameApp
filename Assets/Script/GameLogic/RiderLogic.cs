@@ -17,6 +17,8 @@ public class RiderLogic: ActorLogic
 		this.level = level2;
 		this.id = id2;
 		this.character = "rider";
+		this.isDead = false;
+
 		initSkill ();
 	}
 

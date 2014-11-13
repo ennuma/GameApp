@@ -3,10 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 public class GameLogic : MonoBehaviour {
 
+	//instance for player
 	private RiderLogic player;
-	private ActorLogic enemy;
-	//private List<ActorLogic> actors = new List<ActorLogic>();
-	// Use this for initialization
+	//instance for enemy
+	private RiderLogic enemy;
+	//dictionary for actormap, map id to actorlogic. 0 for player, 1 for enemy
+	private Dictionary<int,ActorLogic> actormap = new Dictionary<int,ActorLogic>();
+	//info
+	private Dictionary<int,Dictionary<string,int>> info = new Dictionary<int,Dictionary<string,int>>();
+	//
+	private int playerReady = 0;
+	private int enemyReady = 0;
+
 	void Start () {
 		System.Action<IEventType> atkCallback = atkHandler;
 		EventMgr.It.register (new BattleEventAttack (), atkCallback);
@@ -21,15 +29,12 @@ public class GameLogic : MonoBehaviour {
 		player = new RiderLogic();
 		player.init (50, 2, 0, 0, 1, 1);
 		//rider
-		//enemy = new ActorLogic (50, 2, 0, 0, 1, 1);
+		enemy = new RiderLogic();
+		enemy.init (50, 2, 0, 0, 1, 1);
 		//test
-		/**
-		BattleEventAttack atk = new BattleEventAttack ();
-		atk.rhythm_quality = 0;
-		atk.self_id = 0;
-		Debug.Log("queue atk");
-		EventMgr.It.queueEvent (atk);
-		**/
+		actormap.Add (0, player);
+		actormap.Add (1, enemy);
+
 	}
 	
 	// Update is called once per frame
@@ -37,39 +42,144 @@ public class GameLogic : MonoBehaviour {
 	
 	}
 
+	/**
+	Method Name: defHandler
+	Description: handler attack event
+	 **/
 	private void atkHandler(IEventType evnt){
 		Debug.Log("atk event received");
 		BattleEventAttack m_evnt = evnt as BattleEventAttack;
+
 		int quality = m_evnt.rhythm_quality;
 		int id = m_evnt.self_id;
 		int dmg = 0;
+		dmg = actormap [id].getValueForSkill ("attack", 0, quality);
+
+		//need to fix in later version this damage is not thread safe
+		int enemyid = -1;
 		if (id == 0) {
-			dmg = player.getValueForSkill ("attack", 0, quality);		
+			enemyid = 1;
 		} else {
-				
+			enemyid=0;
 		}
+		ActorLogic from = actormap [id];
+		ActorLogic target = actormap [enemyid];
+
+		from.currentTurnAction = 0;
+		target.dmgTaken = dmg;
 		Debug.Log ("damage is : "+ dmg.ToString());
+
+		tryEndTurn ();
 
 	}
 
+	/**
+	Method Name: defHandler
+	Description: handler defend event
+	 **/
 	private void defHandler(IEventType evnt){
 		Debug.Log("def event received");
 		BattleEventDefense m_evnt = evnt as BattleEventDefense;
+
+
+		int quality = m_evnt.rhythm_quality;
+		int id = m_evnt.self_id;
+		int dmg = 0;
+		dmg = actormap [id].getValueForSkill ("defend", 0, quality);
 		
+		//need to fix in later version this damage is not thread safe
+		int enemyid = -1;
+		if (id == 0) {
+			enemyid = 1;
+		} else {
+			enemyid=0;
+		}
+		ActorLogic from = actormap [id];
+		ActorLogic target = actormap [enemyid];
+		
+		from.currentTurnAction = 1;
+		from.dmgBlocked = dmg;
+		Debug.Log ("defend is : "+ dmg.ToString());
+
+		tryEndTurn ();
 	}
 
+	/**
+	Method Name: turnendHandler
+	Description: receive this event means the corresponding player is ready for next
+					turn. also try start next turn
+	 **/
 	private void turnendHandler(IEventType evnt){
 		Debug.Log("def event received");
 		BattleTurnEndEvent m_evnt = evnt as BattleTurnEndEvent;
+
+		int id = m_evnt.self_id;
+		if (id == 0) {
+			playerReady = 1;		
+		}else{
+			enemyReady = 1;
+		}
+
+		tryStartTurn ();
 	}
 
-	private void snedTurnStart(){
+	/**
+	Method Name: sendTurnStart
+	Description: send the start information to client side for starting a new turn
+					A client must receive this event to make new input 
+	 **/
+	private void sendTurnStart(){
 		BattleTurnStartEvent evnt = new BattleTurnStartEvent();
 		EventMgr.It.queueEvent (evnt);
 	}
 
+	/**
+	Method Name: sendTurnInfo
+	Description: send the useful information to client side for rendering effect
+	 **/
 	private void sendTurnInfo(){
 		BattleTurnInfoEvent evnt = new BattleTurnInfoEvent();
+		//add info for each player
+		info.Add (0, player.convertToDictionary ());
+		info.Add (1, enemy.convertToDictionary ());
+		//deep copy current info dictionary
+		evnt.dictionary = new Dictionary<int, Dictionary<string, int>>(info);
+		//update current logic state
+		foreach(ActorLogic ac in actormap.Values){
+			ac.update();
+		}
+		//clear info data dictionary
+		info.Clear ();
+		//queue turninfoevent
 		EventMgr.It.queueEvent (evnt);
 	}
+
+	/**
+	Method Name : tryStartTurn
+	Description : this method is used for star turn, each time game logic receive turnendevent
+ 					the corresponding actor is marked ready to start next turn. This method is 
+					being called in **turnendHandler**
+	 **/
+	private void tryStartTurn ()
+	{
+		if (playerReady==1 && enemyReady==1) {
+			sendTurnStart();		
+		}
+	}
+
+	/**
+	Method Name : tryEndTurn
+	Description : this method is used for end turn, each time game logic receive any actionevent(atk,def)
+ 					the corresponding actor is marked ready to render effect. This method is 
+					being called in **any actionevent handler**
+					After this being called, game logic will queue infodataEvent to the eventmgr and ready
+					for client side to display animation
+	 **/
+	private void tryEndTurn ()
+	{
+		if (player.currentTurnAction != -1 && enemy.currentTurnAction != -1) {
+			sendTurnInfo();		
+		}
+	}
+
 }

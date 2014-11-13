@@ -11,6 +11,15 @@ public class ActorLogic
 	public int level;
 	public int id;
 	public string character;
+	public Boolean isDead;
+
+	//value reset for each turn
+	public int dmgTaken = 0;
+	public int dmgBlocked = 0;
+	public int currentTurnAction = -1;
+	public int deltaqi = 0;
+	public int deltalevel = 0;
+
 	public ActorLogic()
 	{
 	}
@@ -23,11 +32,11 @@ public class ActorLogic
 		this.level = level2;
 		this.qi = qi2;
 		this.id = id2;
-
+		this.isDead = false;
 		
 		//buildSkill ();
 	}
-
+	
 	protected  List<List<int>> buildSkill(string str)
 	{
 		string[] charlist = str.Split ();
@@ -53,6 +62,34 @@ public class ActorLogic
 	{
 
 		return 0;
+	}
+
+	public void update()
+	{
+		this.health -= dmgTaken-dmgBlocked;
+		if (health <= 0) {
+			isDead = true;		
+		}
+		dmgTaken = 0;
+		dmgBlocked = 0;
+		currentTurnAction = -1;
+		deltaqi = 0;
+		deltalevel = 0;
+	}
+
+	public Dictionary<string, int> convertToDictionary()
+	{
+		Dictionary<string, int> ret = new Dictionary<string, int> (){
+			{"attack_damage",dmgTaken},
+			{"defense_value",dmgBlocked},
+			{"current_turn_action",currentTurnAction},
+			{"qi",qi+deltaqi},
+			{"blood",health - dmgTaken},
+			{"level",level + deltalevel},
+			{"debuff_state", 0},
+			{"skill",0}
+		};
+		return ret;
 	}
 }
 
