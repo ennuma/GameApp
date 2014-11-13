@@ -67,6 +67,12 @@ public class BattleEventListener: MonoBehaviour
 		int e_blood = enemy_dic["blood"];
 		int e_level = enemy_dic["level"];
 		Debug.Log ("self blood" + blood);
+
+
+	}
+	private void Send_Battle_Turn_End_Event(){
+		EventMgr.It.queueEvent (new BattleTurnEndEvent());
+
 	}
 }
 
