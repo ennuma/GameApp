@@ -11,7 +11,14 @@ using System.Collections;
 // ------------------------------------------------------------------------------
 public interface BattleEvent: IEventType
 {
-	int self_id{ get; set; }
-
+	//string m_type = "battletype";
+	//int self_id;
+	//string m_type = "BATTLEEVENT";
+	
+	//public string type
+	//{
+	//	get { return m_type; }
+	//	set { m_type = value; }
+	//}
 }
 

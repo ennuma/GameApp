@@ -13,15 +13,16 @@ using System;
  **/
 public class BattleTurnStartEvent:IEventType
 {
+	public string m_type = "BATTLETURNSTARTEVENT";
 
 	public BattleTurnStartEvent ()
 	{
-		type = "battle turn start event";
+		//type = "battle turn start event";
 	}
 	public string type
 	{
-		get { return type; }
-		set { type = value; }
+		get { return m_type; }
+		set { m_type = value; }
 	}
 }
 
