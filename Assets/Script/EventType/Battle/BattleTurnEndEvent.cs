@@ -13,6 +13,7 @@ public class BattleTurnEndEvent: IEventType
 {
 	public string m_type = "BATTLETURNENDEVENT";
 
+	public int self_id;
 	public BattleTurnEndEvent ()
 	{
 		//type = "battle turn end event";
