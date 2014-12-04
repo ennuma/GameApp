@@ -24,7 +24,7 @@ public class BattleEventListener: MonoBehaviour
 	public UILabel enemy_attack;
 	public BattleEventListener ()
 	{
-		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
+//		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
 	}
 	void Start () {
 		System.Action<IEventType> callback = Battle_Turn_Info_Handler;
@@ -51,7 +51,7 @@ public class BattleEventListener: MonoBehaviour
 		enemy_attack.text = "10";
 
 
-		self_dic = m_evnt.dictionary[0];
+//		self_dic = m_evnt.dictionary[0];
 		enemy_dic = m_evnt.dictionary[1];
 		int attack_damage = self_dic["attack_damage"];//damage taken at the end
 		int defense_value = self_dic ["defense_value"];//damage blocked
