@@ -45,7 +45,7 @@ public class RythmeManager : MonoBehaviour {
 
 		battleDic.Add ("2211", new BattleEventAttack());
 		battleDic.Add ("1122", new BattleEventDefense());
-
+		battleDic.Add ("2222", new BattleEventQi());
 	}
 	
 	// Update is called once per frame
