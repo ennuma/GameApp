@@ -5,6 +5,8 @@ public class RythmBehavior : MonoBehaviour {
 	
 	public GameObject HitPoint;
 	public GameObject BornPoint;
+	public GameObject StartPoint;
+	public GameObject[] myArray = new GameObject[9];  // declaration
 
 
 	// Use this for initialization
@@ -25,7 +27,21 @@ public class RythmBehavior : MonoBehaviour {
 		GameObject node = NGUITools.AddChild (gameObject,Resources.Load ("Node") as GameObject);
 		node.transform.position = BornPoint.transform.position;
 		node.rigidbody.velocity = new Vector3 (speed, 0, 0);
-
 		//Invoke("createNewRythmObj",5); // 五秒建造一个rythmobj
+	}
+	public void createDragon(float num){
+		int index = 0;
+		for (float i = 0; i < num; i++) {
+			GameObject tmp = NGUITools.AddChild (gameObject, Resources.Load ("Dragon") as GameObject);
+			float x_val = StartPoint.transform.position.x + i/5;
+			tmp.transform.position = new Vector3(x_val, StartPoint.transform.position.y, StartPoint.transform.position.z);
+			myArray[index] = tmp;
+			index++;
+		}
+	}
+	public void destroyDragon(){
+		for (int i = 0; i < 9; i++) {
+			Destroy (myArray [i]);
+		}
 	}
 }
