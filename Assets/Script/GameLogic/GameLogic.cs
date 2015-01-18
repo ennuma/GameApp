@@ -84,6 +84,7 @@ public class GameLogic : MonoBehaviour {
 
 		int quality = m_evnt.rhythm_quality;
 		int id = m_evnt.self_id;
+		Debug.Log (id.ToString ());
 		int dmg = 0;
 		dmg = actormap [id].getValueForSkill ("defend", 0, quality);
 		

@@ -13,6 +13,7 @@ public class RythmeManager : MonoBehaviour {
 	private float currentTime;
 	private List<float> timeList = new List<float>();
 	private List<RythmeResult> resultList = new List<RythmeResult>();
+	private Dictionary<string, BattleEvent> battleDic = new Dictionary<string, BattleEvent>();
 
 	//value for range
 	public float bad;
@@ -34,11 +35,17 @@ public class RythmeManager : MonoBehaviour {
 		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
 		EventMgr.It.queueEvent (btse);
 
+		Debug.Log("in Start");
+
 		//Timelist should get from database , here fake a timelist to test
 		timeList.Add (1);
 		timeList.Add (2);
 		timeList.Add (3);
 		timeList.Add (4);
+
+		battleDic.Add ("2211", new BattleEventAttack());
+		battleDic.Add ("1122", new BattleEventDefense());
+
 	}
 	
 	// Update is called once per frame
@@ -183,21 +190,54 @@ public class RythmeManager : MonoBehaviour {
 
 	void checkResult(){
 
+		string instResult = "";
+		int qualityResult = 0;
 		if (resultList.Count == 4) {
 			//do everything we need to send msg to server	
+
 			isEnd = true;
 			foreach(RythmeResult rs in resultList)
 			{
-				Debug.Log(rs.quality);
+				if (rs.myCommand == RythmeResult.leftOrRight.miss){
+					BattleEventMiss info = new BattleEventMiss();
+					info.self_id = 0;
+					info.rhythm_quality = 0;
+					EventMgr.It.queueEvent(info);
+					instResult = "miss";
+					qualityResult = 0;
+					Debug.Log(instResult + qualityResult);
+					return;
+				}
+				else if(rs.myCommand == RythmeResult.leftOrRight.left){
+					instResult += "1";
+				}
+				else { instResult += "2"; }
+				qualityResult = qualityResult + rs.quality;
+		
 			}
-			BattleEventAttack bted = new BattleEventAttack ();
-			bted.self_id = 0;
-			bted.rhythm_quality = 1;
-			EventMgr.It.queueEvent (bted);
+			Debug.Log(instResult);
+			if(battleDic.ContainsKey(instResult)){
+				Dictionary<string, BattleEvent>  newDic = new Dictionary<string, BattleEvent>(battleDic); 
+				BattleEvent returnEvent = newDic[instResult];
+				returnEvent.self_id = 0;
+				returnEvent.rhythm_quality = qualityResult/4;
+				//Debug.Log(returnEvent.type);
+				EventMgr.It.queueEvent(returnEvent);
+			}
+			else{
+				BattleEventMiss info = new BattleEventMiss();
+				info.self_id = 0;
+				info.rhythm_quality = 0;
+				instResult = "miss";
+				qualityResult = 0;
+				EventMgr.It.queueEvent(info);
+
+			}
+
 
 			BattleEventDefense enemy = new BattleEventDefense ();
-			bted.self_id = 1;
-			enemy.rhythm_quality=2;
+			enemy.self_id = 1;
+			enemy.rhythm_quality=7;
 			EventMgr.It.queueEvent (enemy);
 		}
 	}
