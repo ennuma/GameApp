@@ -22,6 +22,9 @@ public class GameLogic : MonoBehaviour {
 		System.Action<IEventType> defCallback = defHandler;
 		EventMgr.It.register (new BattleEventDefense (), defCallback);
 
+		System.Action<IEventType> missCallback = missHandler;
+		EventMgr.It.register (new BattleEventMiss (), missCallback);
+
 		System.Action<IEventType> turnendCallback = turnendHandler;
 		EventMgr.It.register (new BattleTurnEndEvent (), turnendHandler);
 
@@ -111,29 +114,29 @@ public class GameLogic : MonoBehaviour {
 	 **/
 	private void missHandler(IEventType evnt){
 		Debug.Log("miss event received");
-		//BattleEventDefense m_evnt = evnt as BattleEventDefense;
+		BattleEventMiss m_evnt = evnt as BattleEventMiss;
 		
 		
-		//int quality = m_evnt.rhythm_quality;
-		//int id = m_evnt.self_id;
+		int quality = m_evnt.rhythm_quality;
+		int id = m_evnt.self_id;
 		//int dmg = 0;
 		//dmg = actormap [id].getValueForSkill ("defend", 0, quality);
 		
 		//need to fix in later version this damage is not thread safe
-		//int enemyid = -1;
-		//if (id == 0) {
-		//	enemyid = 1;
-		//} else {
-		//	enemyid=0;
-		//}
-		//ActorLogic from = actormap [id];
-		//ActorLogic target = actormap [enemyid];
+		int enemyid = -1;
+		if (id == 0) {
+			enemyid = 1;
+		} else {
+			enemyid=0;
+		}
+		ActorLogic from = actormap [id];
+		ActorLogic target = actormap [enemyid];
 		
-		//from.currentTurnAction = 1;
+		from.currentTurnAction = 3;
 		//from.dmgBlocked = dmg;
 		//Debug.Log ("defend is : "+ dmg.ToString());
 		
-		//tryEndTurn ();
+		tryEndTurn ();
 	}
 
 	/**
