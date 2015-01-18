@@ -234,6 +234,7 @@ public class RythmeManager : MonoBehaviour {
 
 			}
 
+			Debug.Log("in check result");
 
 			BattleEventDefense enemy = new BattleEventDefense ();
 			enemy.self_id = 1;
