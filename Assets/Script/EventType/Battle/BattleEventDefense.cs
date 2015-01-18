@@ -36,7 +36,7 @@ public class BattleEventDefense:BattleEvent
 	
 	public int rhythm_quality{
 		get {return m_rhythm_quality; } 
-		set {m_self_id = value;}
+		set {m_rhythm_quality = value;}
 	}
 
 	private int m_self_id;

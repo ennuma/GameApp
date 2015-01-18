@@ -33,7 +33,7 @@ public class BattleEventAttack:BattleEvent
 	
 	public int rhythm_quality{
 		get {return m_rhythm_quality; } 
-		set {m_self_id = value ; }
+		set {m_rhythm_quality = value ; }
 	}
 	public int m_self_id;
 	public int m_rhythm_quality;

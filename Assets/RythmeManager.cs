@@ -237,7 +237,7 @@ public class RythmeManager : MonoBehaviour {
 
 			BattleEventDefense enemy = new BattleEventDefense ();
 			enemy.self_id = 1;
-			enemy.rhythm_quality=7;
+			enemy.rhythm_quality=1;
 			EventMgr.It.queueEvent (enemy);
 		}
 	}
