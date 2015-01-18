@@ -9,10 +9,10 @@ public class RythmeResult
 	public	enum leftOrRight{left, right, miss};
 	private leftOrRight _myCommand;
 	// record 
-	private float _quality;
+	private int _quality;
 
 
-	public RythmeResult (leftOrRight lr, float qua)
+	public RythmeResult (leftOrRight lr, int qua)
 	{
 		_myCommand = lr;
 		_quality = qua;
@@ -25,7 +25,7 @@ public class RythmeResult
 		set { _myCommand = value; }
 	}
 
-	public float quality
+	public int quality
 	{
 		get { return _quality; }
 		set { _quality = value; }

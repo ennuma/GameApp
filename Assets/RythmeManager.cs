@@ -13,6 +13,7 @@ public class RythmeManager : MonoBehaviour {
 	private float currentTime;
 	private List<float> timeList = new List<float>();
 	private List<RythmeResult> resultList = new List<RythmeResult>();
+	private Dictionary<string, BattleEvent> battleDic = new Dictionary<string, BattleEvent>();
 
 	//value for range
 	public float bad;
@@ -26,19 +27,23 @@ public class RythmeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//get interval time (second) from Database
-		intervalTime = 5;
+		intervalTime = 1;
 		//get dropTime from DATABASE 
-		dropTime = 10;
+		dropTime = 2;
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
 		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
 		EventMgr.It.queueEvent (btse);
 
+		Debug.Log("in Start");
+
 		//Timelist should get from database , here fake a timelist to test
-		timeList.Add (5);
-		timeList.Add (10);
-		timeList.Add (15);
-		timeList.Add (20);
+		timeList.Add (1);
+		timeList.Add (2);
+		timeList.Add (3);
+		timeList.Add (4);
+		battleDic.Add ("2211", new BattleEventAttack());
+		battleDic.Add ("1122", new BattleEventDefense());
 	}
 	
 	// Update is called once per frame
@@ -183,12 +188,48 @@ public class RythmeManager : MonoBehaviour {
 
 	void checkResult(){
 
+		string instResult = "";
+		int qualityResult = 0;
 		if (resultList.Count == 4) {
 			//do everything we need to send msg to server	
+
 			isEnd = true;
 			foreach(RythmeResult rs in resultList)
 			{
-				Debug.Log(rs.quality);
+				if (rs.myCommand == RythmeResult.leftOrRight.miss){
+					BattleEventMiss info = new BattleEventMiss();
+					info.self_id = 0;
+					info.rhythm_quality = 0;
+					EventMgr.It.queueEvent(info);
+					instResult = "miss";
+					qualityResult = 0;
+					Debug.Log(instResult + qualityResult);
+					return;
+				}
+				else if(rs.myCommand == RythmeResult.leftOrRight.left){
+					instResult += "1";
+				}
+				else { instResult += "2"; }
+				qualityResult = qualityResult + rs.quality;
+		
+			}
+			Debug.Log(instResult);
+			if(battleDic.ContainsKey(instResult)){
+				Dictionary<string, BattleEvent>  newDic = new Dictionary<string, BattleEvent>(battleDic); 
+				BattleEvent returnEvent = newDic[instResult];
+				returnEvent.self_id = 0;
+				returnEvent.rhythm_quality = qualityResult/4;
+				//Debug.Log(returnEvent.type);
+				EventMgr.It.queueEvent(returnEvent);
+			}
+			else{
+				BattleEventMiss info = new BattleEventMiss();
+				info.self_id = 0;
+				info.rhythm_quality = 0;
+				instResult = "miss";
+				qualityResult = 0;
+				EventMgr.It.queueEvent(info);
+
 			}
 		}
 	}

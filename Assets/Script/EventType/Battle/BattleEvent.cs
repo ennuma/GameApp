@@ -11,14 +11,20 @@ using System.Collections;
 // ------------------------------------------------------------------------------
 public interface BattleEvent: IEventType
 {
-	//string m_type = "battletype";
-	//int self_id;
-	//string m_type = "BATTLEEVENT";
+	 string type {
+		get;
+		set;
+	}
 	
-	//public string type
-	//{
-	//	get { return m_type; }
-	//	set { m_type = value; }
-	//}
+	 int self_id {
+		get;
+		set;
+	}
+	
+	 int rhythm_quality {
+		get;
+		set;
+	}
+
 }
 
