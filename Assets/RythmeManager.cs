@@ -82,7 +82,7 @@ public class RythmeManager : MonoBehaviour {
 		}else if(absdelta > normal)
 		{
 			//bad
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 1);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -96,14 +96,14 @@ public class RythmeManager : MonoBehaviour {
 		}else if(absdelta > perfect)
 		{
 			//good
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
 		}else
 		{
 			//perfect
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 4);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -129,7 +129,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			//bad
 			Debug.Log("BAD");
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 1);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -145,7 +145,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			Debug.Log("good");
 			//good
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 3);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -153,7 +153,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			Debug.Log("perfect");
 			//perfect
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 4);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
