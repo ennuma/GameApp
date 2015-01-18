@@ -199,14 +199,7 @@ public class RythmeManager : MonoBehaviour {
 			foreach(RythmeResult rs in resultList)
 			{
 				if (rs.myCommand == RythmeResult.leftOrRight.miss){
-					BattleEventMiss info = new BattleEventMiss();
-					info.self_id = 0;
-					info.rhythm_quality = 0;
-					EventMgr.It.queueEvent(info);
-					instResult = "miss";
-					qualityResult = 4;
-					Debug.Log(instResult + qualityResult);
-					return;
+					instResult += "0";
 				}
 				else if(rs.myCommand == RythmeResult.leftOrRight.left){
 					instResult += "1";
@@ -240,6 +233,8 @@ public class RythmeManager : MonoBehaviour {
 			enemy.self_id = 1;
 			enemy.rhythm_quality=1;
 			EventMgr.It.queueEvent (enemy);
+			rythmBehavior.destoryRythmObj();
+		
 		}
 	}
 
