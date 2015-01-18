@@ -75,6 +75,9 @@ public class ActorLogic
 		if (health <= 0) {
 			isDead = true;		
 		}
+
+		qi += deltaqi;
+
 		//dmgTaken = 0;
 		//dmgBlocked = 0;
 		//currentTurnAction = -1;
