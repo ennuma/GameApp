@@ -82,7 +82,7 @@ public class RythmeManager : MonoBehaviour {
 		}else if(absdelta > normal)
 		{
 			//bad
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 1);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -96,14 +96,14 @@ public class RythmeManager : MonoBehaviour {
 		}else if(absdelta > perfect)
 		{
 			//good
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
 		}else
 		{
 			//perfect
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 4);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -129,7 +129,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			//bad
 			Debug.Log("BAD");
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 1);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -145,7 +145,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			Debug.Log("good");
 			//good
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 3);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -153,7 +153,7 @@ public class RythmeManager : MonoBehaviour {
 		{
 			Debug.Log("perfect");
 			//perfect
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 4);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
 			return;
@@ -183,7 +183,7 @@ public class RythmeManager : MonoBehaviour {
 		if (currentTime > upperbound) {
 			//miss
 			Debug.Log("MISS");
-			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.miss, 0);
+			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.miss, 4);
 			resultList.Add(rs);
 		}
 	}
@@ -204,7 +204,7 @@ public class RythmeManager : MonoBehaviour {
 					info.rhythm_quality = 0;
 					EventMgr.It.queueEvent(info);
 					instResult = "miss";
-					qualityResult = 0;
+					qualityResult = 4;
 					Debug.Log(instResult + qualityResult);
 					return;
 				}
@@ -229,7 +229,7 @@ public class RythmeManager : MonoBehaviour {
 				info.self_id = 0;
 				info.rhythm_quality = 0;
 				instResult = "miss";
-				qualityResult = 0;
+				qualityResult = 4;
 				EventMgr.It.queueEvent(info);
 
 			}
