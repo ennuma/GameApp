@@ -25,6 +25,9 @@ public class GameLogic : MonoBehaviour {
 		System.Action<IEventType> missCallback = missHandler;
 		EventMgr.It.register (new BattleEventMiss (), missCallback);
 
+		System.Action<IEventType> qiCallback = qiHandler;
+		EventMgr.It.register (new BattleEventQi (), qiCallback);
+
 		System.Action<IEventType> turnendCallback = turnendHandler;
 		EventMgr.It.register (new BattleTurnEndEvent (), turnendHandler);
 
@@ -139,6 +142,37 @@ public class GameLogic : MonoBehaviour {
 		tryEndTurn ();
 	}
 
+	/**
+	Method Name: qiHandler
+	Description: handler qi event
+	 **/
+	private void qiHandler(IEventType evnt){
+		Debug.Log("miss event received");
+		BattleEventQi m_evnt = evnt as BattleEventQi;
+		
+		
+		int quality = m_evnt.rhythm_quality;
+		int id = m_evnt.self_id;
+		//int dmg = 0;
+		//dmg = actormap [id].getValueForSkill ("defend", 0, quality);
+		
+		//need to fix in later version this damage is not thread safe
+		int enemyid = -1;
+		if (id == 0) {
+			enemyid = 1;
+		} else {
+			enemyid=0;
+		}
+		ActorLogic from = actormap [id];
+		ActorLogic target = actormap [enemyid];
+		
+		from.currentTurnAction = 4;
+		from.deltaqi += 1;
+		//Debug.Log ("defend is : "+ dmg.ToString());
+		
+		tryEndTurn ();
+	}
+	
 	/**
 	Method Name: turnendHandler
 	Description: receive this event means the corresponding player is ready for next
