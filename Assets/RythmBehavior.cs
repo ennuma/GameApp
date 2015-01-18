@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RythmBehavior : MonoBehaviour {
 	
@@ -7,11 +8,12 @@ public class RythmBehavior : MonoBehaviour {
 	public GameObject BornPoint;
 	public GameObject StartPoint;
 	public GameObject[] myArray = new GameObject[9];  // declaration
-
+	List<GameObject> movingNodes;
 
 	// Use this for initialization
 	void Start () {
 		//Invoke("createNewRythmObj",5);
+		movingNodes = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,7 @@ public class RythmBehavior : MonoBehaviour {
 		float length =  HitPoint.transform.position.x - BornPoint.transform.position.x;
 		float speed = length / time;
 		GameObject node = NGUITools.AddChild (gameObject,Resources.Load ("Node") as GameObject);
+		movingNodes.Add(node);
 		node.transform.position = BornPoint.transform.position;
 		node.rigidbody.velocity = new Vector3 (speed, 0, 0);
 		//Invoke("createNewRythmObj",5); // 五秒建造一个rythmobj
@@ -42,6 +45,12 @@ public class RythmBehavior : MonoBehaviour {
 	public void destroyDragon(){
 		for (int i = 0; i < 9; i++) {
 			Destroy (myArray [i]);
+		}
+	}
+	public void destoryRythmObj(){
+		foreach (GameObject node in movingNodes) {
+			Destroy(node);
+			Debug.Log (movingNodes.Count);
 		}
 	}
 }
