@@ -30,7 +30,7 @@ public class BattleEventListener: MonoBehaviour
 		System.Action<IEventType> callback = Battle_Turn_Info_Handler;
 		EventMgr.It.register(new BattleTurnInfoEvent(),callback);
 
-		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
+		//EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
 		self_blood.text = "12";
 		self_level.text = "12";
 		self_attack.text = "12";
