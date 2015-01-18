@@ -58,7 +58,7 @@ public class ActorLogic
 		return ret;
 	}
 
-	public virtual int getValueForSkill(string skillname, int quality, int level)
+	public virtual int getValueForSkill(string skillname, int level, int quality)
 	{
 
 		return 0;
@@ -66,6 +66,7 @@ public class ActorLogic
 
 	public void update()
 	{
+		Debug.Log (String.Format("damage taken is {0}, damage blocked is {1}", dmgTaken.ToString(), dmgBlocked.ToString()));
 		this.health -= dmgTaken-dmgBlocked;
 		if (health <= 0) {
 			isDead = true;		
@@ -83,9 +84,9 @@ public class ActorLogic
 			{"attack_damage",dmgTaken},
 			{"defense_value",dmgBlocked},
 			{"current_turn_action",currentTurnAction},
-			{"qi",qi+deltaqi},
-			{"blood",health - dmgTaken},
-			{"level",level + deltalevel},
+			{"qi",qi},
+			{"blood",health},
+			{"level",level},
 			{"debuff_state", 0},
 			{"skill",0}
 		};

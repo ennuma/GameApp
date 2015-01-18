@@ -110,7 +110,7 @@ public class GameLogic : MonoBehaviour {
 					turn. also try start next turn
 	 **/
 	private void turnendHandler(IEventType evnt){
-		Debug.Log("def event received");
+		Debug.Log("turn end event received");
 		BattleTurnEndEvent m_evnt = evnt as BattleTurnEndEvent;
 
 		int id = m_evnt.self_id;
@@ -139,19 +139,34 @@ public class GameLogic : MonoBehaviour {
 	 **/
 	private void sendTurnInfo(){
 		BattleTurnInfoEvent evnt = new BattleTurnInfoEvent();
+
+		//update current logic state
+		foreach(ActorLogic ac in actormap.Values){
+			ac.update();
+		}
+
 		//add info for each player
 		info.Add (0, player.convertToDictionary ());
 		info.Add (1, enemy.convertToDictionary ());
 		//deep copy current info dictionary
 		evnt.dictionary = new Dictionary<int, Dictionary<string, int>>(info);
-		//update current logic state
-		foreach(ActorLogic ac in actormap.Values){
-			ac.update();
-		}
+	
 		//clear info data dictionary
 		info.Clear ();
 		//queue turninfoevent
 		EventMgr.It.queueEvent (evnt);
+		Debug.Log("0 : ");
+		foreach (string k in evnt.dictionary[0].Keys) {
+
+						Debug.Log (k);
+			Debug.Log(evnt.dictionary[0][k]);
+		}
+		Debug.Log("1 : ");
+		foreach (string k in evnt.dictionary[1].Keys) {
+
+			Debug.Log (k);
+			Debug.Log(evnt.dictionary[1][k]);
+		}
 	}
 
 	/**

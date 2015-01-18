@@ -31,7 +31,7 @@ public class RiderLogic: ActorLogic
 		skillDic.Add ("defend", def);	
 	}
 
-	public override int getValueForSkill(string skillname, int quality, int level)
+	public override int getValueForSkill(string skillname, int level, int quality)
 	{
 
 		return skillDic [skillname] [level] [quality];

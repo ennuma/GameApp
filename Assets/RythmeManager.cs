@@ -190,6 +190,15 @@ public class RythmeManager : MonoBehaviour {
 			{
 				Debug.Log(rs.quality);
 			}
+			BattleEventAttack bted = new BattleEventAttack ();
+			bted.self_id = 0;
+			bted.rhythm_quality = 1;
+			EventMgr.It.queueEvent (bted);
+
+			BattleEventDefense enemy = new BattleEventDefense ();
+			bted.self_id = 1;
+			enemy.rhythm_quality=2;
+			EventMgr.It.queueEvent (enemy);
 		}
 	}
 
