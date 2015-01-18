@@ -22,6 +22,8 @@ public class BattleEventListener: MonoBehaviour
 	public UILabel enemy_level;
 	public UILabel enemy_defense;
 	public UILabel enemy_attack;
+	public RythmBehavior qiBehavior;
+
 	public BattleEventListener ()
 	{
 //		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
@@ -40,6 +42,8 @@ public class BattleEventListener: MonoBehaviour
 		enemy_level.text = "10";
 		enemy_defense.text = "10";
 		enemy_attack.text = "10";
+		qiBehavior.createDragon(0);
+
 	}
 
 	/**
@@ -62,7 +66,6 @@ public class BattleEventListener: MonoBehaviour
 		int qi = self_dic ["qi"];
 		int blood = self_dic["blood"];
 		int level = self_dic["level"];
-	
 		switch (current_turn_action) {
 			//Attack
 			case 0:
@@ -74,7 +77,9 @@ public class BattleEventListener: MonoBehaviour
 			case 2:
 				break;
 		}
-
+		qiBehavior.destroyDragon();
+		Debug.Log ("qi is " + qi);
+		qiBehavior.createDragon(qi);
 
 		int e_attack_damage = enemy_dic["attack_damage"];//damage taken at the end
 		int e_defense_value = enemy_dic ["defense_value"];//damage blocked
