@@ -18,7 +18,7 @@ using System.Collections.Generic;
  *  {
  *    attack_damage:1; int //damage taken at the end
  *    defense_value:2; int //damage blocked
- *    current_turn_action: int (attack: 0, defense: 1, skill: 2)
+ *    current_turn_action: int (attack: 0, defense: 1, skill: 2, miss: 3)
  *    qi: int (0 - max)
  *    blood: int (0 - max)
  *    level: int (0 - level_max)

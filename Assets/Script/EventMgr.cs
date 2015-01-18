@@ -48,7 +48,7 @@ public class EventMgr : MonoBehaviour
 				m_EventFunctionMap.TryGetValue(evnt.type, out callback_list);
 			//}
 			if(callback_list == null){
-				Debug.Log("Event is not registered yet");
+				Debug.Log("Event is not registered yet : "+ evnt.type);
 				Application.Quit();
 			}
 			foreach(System.Action<IEventType> callback in callback_list){
