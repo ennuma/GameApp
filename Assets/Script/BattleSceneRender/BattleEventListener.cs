@@ -29,6 +29,7 @@ public class BattleEventListener: MonoBehaviour
 	void Start () {
 		System.Action<IEventType> callback = Battle_Turn_Info_Handler;
 		EventMgr.It.register(new BattleTurnInfoEvent(),callback);
+
 		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
 		self_blood.text = "12";
 		self_level.text = "12";
@@ -111,11 +112,10 @@ public class BattleEventListener: MonoBehaviour
 	private void Send_Battle_Turn_End_Event(){
 		//Query self battle turn end event
 		EventMgr.It.queueEvent (new BattleTurnEndEvent());
-		BattleTurnEndEvent b = new BattleTurnEndEvent ();
-		b.self_id = 1;
-		//Query enemy battle turn end event
-		EventMgr.It.queueEvent (b)
-
+//		BattleTurnEndEvent b = new BattleTurnEndEvent ();
+//		b.self_id = 1;
+//		//Query enemy battle turn end event
+//		EventMgr.It.queueEvent (b)
 	}
 	//Set functions for later use
 	public void setBlood(int value){
