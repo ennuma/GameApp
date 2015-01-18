@@ -112,10 +112,10 @@ public class BattleEventListener: MonoBehaviour
 	private void Send_Battle_Turn_End_Event(){
 		//Query self battle turn end event
 		EventMgr.It.queueEvent (new BattleTurnEndEvent());
-//		BattleTurnEndEvent b = new BattleTurnEndEvent ();
-//		b.self_id = 1;
-//		//Query enemy battle turn end event
-//		EventMgr.It.queueEvent (b)
+		BattleTurnEndEvent b = new BattleTurnEndEvent ();
+		b.self_id = 1;
+		//Query enemy battle turn end event
+		EventMgr.It.queueEvent (b);
 	}
 	//Set functions for later use
 	public void setBlood(int value){
