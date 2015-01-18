@@ -71,6 +71,15 @@ public class ActorLogic
 		if (health <= 0) {
 			isDead = true;		
 		}
+		//dmgTaken = 0;
+		//dmgBlocked = 0;
+		//currentTurnAction = -1;
+		//deltaqi = 0;
+		//deltalevel = 0;
+	}
+
+	public void reset()
+	{
 		dmgTaken = 0;
 		dmgBlocked = 0;
 		currentTurnAction = -1;

@@ -105,6 +105,37 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	/**
+	Method Name: missHandler
+	Description: handler defend event
+	 **/
+	private void missHandler(IEventType evnt){
+		Debug.Log("miss event received");
+		//BattleEventDefense m_evnt = evnt as BattleEventDefense;
+		
+		
+		//int quality = m_evnt.rhythm_quality;
+		//int id = m_evnt.self_id;
+		//int dmg = 0;
+		//dmg = actormap [id].getValueForSkill ("defend", 0, quality);
+		
+		//need to fix in later version this damage is not thread safe
+		//int enemyid = -1;
+		//if (id == 0) {
+		//	enemyid = 1;
+		//} else {
+		//	enemyid=0;
+		//}
+		//ActorLogic from = actormap [id];
+		//ActorLogic target = actormap [enemyid];
+		
+		//from.currentTurnAction = 1;
+		//from.dmgBlocked = dmg;
+		//Debug.Log ("defend is : "+ dmg.ToString());
+		
+		//tryEndTurn ();
+	}
+
+	/**
 	Method Name: turnendHandler
 	Description: receive this event means the corresponding player is ready for next
 					turn. also try start next turn
@@ -167,6 +198,11 @@ public class GameLogic : MonoBehaviour {
 			Debug.Log (k);
 			Debug.Log(evnt.dictionary[1][k]);
 		}
+
+		player.reset ();
+		enemy.reset ();
+		//player.currentTurnAction = -1;
+		//enemy.currentTurnAction = -1;
 	}
 
 	/**

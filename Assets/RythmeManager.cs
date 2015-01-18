@@ -26,19 +26,19 @@ public class RythmeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//get interval time (second) from Database
-		intervalTime = 5;
+		intervalTime = 1;
 		//get dropTime from DATABASE 
-		dropTime = 10;
+		dropTime = 2;
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
 		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
 		EventMgr.It.queueEvent (btse);
 
 		//Timelist should get from database , here fake a timelist to test
-		timeList.Add (5);
-		timeList.Add (10);
-		timeList.Add (15);
-		timeList.Add (20);
+		timeList.Add (1);
+		timeList.Add (2);
+		timeList.Add (3);
+		timeList.Add (4);
 	}
 	
 	// Update is called once per frame
