@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 04c999499e5fcbb459dad3e99dbe6e29
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB1"
+    21300002: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB10"
+    21300004: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB11"
+    21300006: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB12"
+    21300008: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB13"
+    21300010: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB14"
+    21300012: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB15"
+    21300014: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB2"
+    21300016: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB3"
+    21300018: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB4"
+    21300020: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB5"
+    21300022: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB6"
+    21300024: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB7"
+    21300026: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB8"
+    21300028: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB9"
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB1"
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 790
+        width: 209
+        height: 232
+      alignment: 9
+      pivot: {x: .81339711, y: .351293117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB10"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 802
+        width: 439
+        height: 220
+      alignment: 9
+      pivot: {x: .389521629, y: .352272719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB11"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 580
+        width: 297
+        height: 220
+      alignment: 9
+      pivot: {x: .575757563, y: .352272719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB12"
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 580
+        width: 269
+        height: 220
+      alignment: 9
+      pivot: {x: .635687709, y: .352272719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB13"
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 574
+        width: 153
+        height: 226
+      alignment: 9
+      pivot: {x: 1.11764705, y: .356194705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB14"
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 559
+        width: 209
+        height: 229
+      alignment: 9
+      pivot: {x: .81339711, y: .355895191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB15"
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 790
+        width: 209
+        height: 232
+      alignment: 9
+      pivot: {x: .81339711, y: .351293117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB2"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 334
+        width: 191
+        height: 223
+      alignment: 9
+      pivot: {x: 1.10994768, y: .347533643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB3"
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 114
+        width: 194
+        height: 220
+      alignment: 9
+      pivot: {x: 1.1082474, y: .352272719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB4"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 335
+        width: 196
+        height: 222
+      alignment: 9
+      pivot: {x: 1.10204077, y: .3490991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB5"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 110
+        width: 197
+        height: 222
+      alignment: 9
+      pivot: {x: 1.1015228, y: .3490991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB6"
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 112
+        width: 196
+        height: 221
+      alignment: 9
+      pivot: {x: 1.10714281, y: .350678742}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB7"
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 336
+        width: 195
+        height: 221
+      alignment: 9
+      pivot: {x: 1.10769236, y: .350678742}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB8"
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 113
+        width: 187
+        height: 221
+      alignment: 9
+      pivot: {x: 1.11764705, y: .350678742}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD\uFFFD\uFFFD\u04BB9"
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 802
+        width: 311
+        height: 220
+      alignment: 9
+      pivot: {x: .67202574, y: .352272719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
