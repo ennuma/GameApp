@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 1d0e0211200bb2a44bafcf942cae29a8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "\uFFFD\uFFFD1"
+    21300002: "\uFFFD\uFFFD10"
+    21300004: "\uFFFD\uFFFD11"
+    21300006: "\uFFFD\uFFFD12"
+    21300008: "\uFFFD\uFFFD2"
+    21300010: "\uFFFD\uFFFD3"
+    21300012: "\uFFFD\uFFFD4"
+    21300014: "\uFFFD\uFFFD5"
+    21300016: "\uFFFD\uFFFD6"
+    21300018: "\uFFFD\uFFFD7"
+    21300020: "\uFFFD\uFFFD8"
+    21300022: "\uFFFD\uFFFD9"
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "\uFFFD\uFFFD1"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 361
+        width: 130
+        height: 219
+      alignment: 9
+      pivot: {x: .261538476, y: .474885851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD10"
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 803
+        width: 158
+        height: 219
+      alignment: 9
+      pivot: {x: .215189874, y: .465753436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD11"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 139
+        width: 146
+        height: 219
+      alignment: 9
+      pivot: {x: .232876718, y: .470319629}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD12"
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 139
+        width: 135
+        height: 219
+      alignment: 9
+      pivot: {x: .251851857, y: .474885851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD2"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 145
+        width: 142
+        height: 217
+      alignment: 9
+      pivot: {x: .239436626, y: .4654378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD3"
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 582
+        width: 154
+        height: 219
+      alignment: 9
+      pivot: {x: .220779225, y: .461187214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD4"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 364
+        width: 164
+        height: 216
+      alignment: 9
+      pivot: {x: .213414639, y: .458333343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD5"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 583
+        width: 169
+        height: 218
+      alignment: 9
+      pivot: {x: .213017747, y: .467889905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD6"
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 804
+        width: 171
+        height: 218
+      alignment: 9
+      pivot: {x: .216374263, y: .467889905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD7"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 803
+        width: 173
+        height: 219
+      alignment: 9
+      pivot: {x: .213872835, y: .474885851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD8"
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 582
+        width: 169
+        height: 220
+      alignment: 9
+      pivot: {x: .213017747, y: .472727269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\uFFFD\uFFFD9"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 360
+        width: 164
+        height: 221
+      alignment: 9
+      pivot: {x: .207317069, y: .46606335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

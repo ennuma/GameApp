@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 1130cc1eb2049c64993797390e8b42f4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "\u057E1"
+    21300002: "\u057E10"
+    21300004: "\u057E11"
+    21300006: "\u057E12"
+    21300008: "\u057E2"
+    21300010: "\u057E3"
+    21300012: "\u057E4"
+    21300014: "\u057E5"
+    21300016: "\u057E6"
+    21300018: "\u057E7"
+    21300020: "\u057E8"
+    21300022: "\u057E9"
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "\u057E1"
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 349
+        width: 157
+        height: 223
+      alignment: 9
+      pivot: {x: .216560513, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E10"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 799
+        width: 160
+        height: 223
+      alignment: 9
+      pivot: {x: .212500006, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E11"
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 799
+        width: 158
+        height: 223
+      alignment: 9
+      pivot: {x: .215189874, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E12"
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 124
+        width: 157
+        height: 223
+      alignment: 9
+      pivot: {x: .216560513, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E2"
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 574
+        width: 158
+        height: 223
+      alignment: 9
+      pivot: {x: .215189874, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E3"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 573
+        width: 161
+        height: 223
+      alignment: 9
+      pivot: {x: .211180121, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E4"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 120
+        width: 163
+        height: 224
+      alignment: 9
+      pivot: {x: .208588958, y: .473214298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E5"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 120
+        width: 164
+        height: 224
+      alignment: 9
+      pivot: {x: .207317069, y: .473214298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E6"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 572
+        width: 166
+        height: 224
+      alignment: 9
+      pivot: {x: .204819277, y: .473214298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E7"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 798
+        width: 167
+        height: 224
+      alignment: 9
+      pivot: {x: .203592807, y: .473214298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E8"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 346
+        width: 165
+        height: 224
+      alignment: 9
+      pivot: {x: .206060603, y: .473214298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\u057E9"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 347
+        width: 162
+        height: 223
+      alignment: 9
+      pivot: {x: .209876537, y: .475336313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
