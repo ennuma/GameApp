@@ -53,7 +53,7 @@ public class GameLogic : MonoBehaviour {
 	Description: handler attack event
 	 **/
 	private void atkHandler(IEventType evnt){
-		Debug.Log("atk event received");
+		//Debug.Log("atk event received");
 		BattleEventAttack m_evnt = evnt as BattleEventAttack;
 
 		int quality = m_evnt.rhythm_quality;
@@ -73,7 +73,7 @@ public class GameLogic : MonoBehaviour {
 
 		from.currentTurnAction = 0;
 		target.dmgTaken = dmg;
-		Debug.Log ("damage is : "+ dmg.ToString());
+		//Debug.Log ("damage is : "+ dmg.ToString());
 
 		tryEndTurn ();
 
@@ -84,13 +84,13 @@ public class GameLogic : MonoBehaviour {
 	Description: handler defend event
 	 **/
 	private void defHandler(IEventType evnt){
-		Debug.Log("def event received");
+		//Debug.Log("def event received");
 		BattleEventDefense m_evnt = evnt as BattleEventDefense;
 
 
 		int quality = m_evnt.rhythm_quality;
 		int id = m_evnt.self_id;
-		Debug.Log (id.ToString ());
+		//Debug.Log (id.ToString ());
 		int dmg = 0;
 		dmg = actormap [id].getValueForSkill ("defend", 0, quality);
 		
@@ -106,7 +106,7 @@ public class GameLogic : MonoBehaviour {
 		
 		from.currentTurnAction = 1;
 		from.dmgBlocked = dmg;
-		Debug.Log ("defend is : "+ dmg.ToString());
+		//Debug.Log ("defend is : "+ dmg.ToString());
 
 		tryEndTurn ();
 	}
@@ -116,7 +116,7 @@ public class GameLogic : MonoBehaviour {
 	Description: handler defend event
 	 **/
 	private void missHandler(IEventType evnt){
-		Debug.Log("miss event received");
+		//Debug.Log("miss event received");
 		BattleEventMiss m_evnt = evnt as BattleEventMiss;
 		
 		
@@ -179,7 +179,7 @@ public class GameLogic : MonoBehaviour {
 					turn. also try start next turn
 	 **/
 	private void turnendHandler(IEventType evnt){
-		Debug.Log("turn end event received");
+		//Debug.Log("turn end event received");
 		BattleTurnEndEvent m_evnt = evnt as BattleTurnEndEvent;
 
 		int id = m_evnt.self_id;
@@ -224,17 +224,17 @@ public class GameLogic : MonoBehaviour {
 		info.Clear ();
 		//queue turninfoevent
 		EventMgr.It.queueEvent (evnt);
-		Debug.Log("0 : ");
+		//Debug.Log("0 : ");
 		foreach (string k in evnt.dictionary[0].Keys) {
 
-						Debug.Log (k);
-			Debug.Log(evnt.dictionary[0][k]);
+			//Debug.Log (k);
+			//Debug.Log(evnt.dictionary[0][k]);
 		}
-		Debug.Log("1 : ");
+		//Debug.Log("1 : ");
 		foreach (string k in evnt.dictionary[1].Keys) {
 
-			Debug.Log (k);
-			Debug.Log(evnt.dictionary[1][k]);
+			//Debug.Log (k);
+			//Debug.Log(evnt.dictionary[1][k]);
 		}
 
 		player.reset ();
