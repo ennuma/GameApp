@@ -21,10 +21,10 @@ public class MusicManager : MonoBehaviour {
 
 	public float GetStartTime()
 	{
-
+		return 0;
 	}
 	public float GetIntervelTime()
 	{
-
+		return 0;
 	}
 }
