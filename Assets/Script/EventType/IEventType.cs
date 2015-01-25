@@ -5,4 +5,3 @@ public interface IEventType
 {
 	string type { get; set; }
 }
-
