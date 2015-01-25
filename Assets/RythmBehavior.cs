@@ -50,7 +50,7 @@ public class RythmBehavior : MonoBehaviour {
 	public void destoryRythmObj(){
 		foreach (GameObject node in movingNodes) {
 			Destroy(node);
-			Debug.Log (movingNodes.Count);
+			//Debug.Log (movingNodes.Count);
 		}
 	}
 }

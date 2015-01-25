@@ -14,7 +14,7 @@ public class NetMgr : MonoBehaviour
 	void Update ()
 	{
 		if (dataString != null) {
-			Debug.Log(dataString);
+			//Debug.Log(dataString);
 			OnMessagReceiveHandlerMethod("returnData");		
 		}
 	}

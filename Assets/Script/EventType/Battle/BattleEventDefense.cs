@@ -21,7 +21,7 @@ public class BattleEventDefense:BattleEvent
 	public BattleEventDefense ()
 	{
 		m_type = "BATTLEEVENTDEFENCE";
-		Debug.Log("actually do defence");
+		//Debug.Log("actually do defence");
 	}
 	public string type
 	{
