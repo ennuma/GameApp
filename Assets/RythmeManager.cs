@@ -30,18 +30,15 @@ public class RythmeManager : MonoBehaviour {
 		intervalTime = 1;
 		//get dropTime from DATABASE 
 		dropTime = 2;
-		System.Action<IEventType> callback = turn_Start;
-		EventMgr.It.register(new BattleTurnStartEvent(),callback);
-		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
-		EventMgr.It.queueEvent (btse);
+
 
 		Debug.Log("in Start");
 
 		//Timelist should get from database , here fake a timelist to test
-		timeList.Add (1);
-		timeList.Add (2);
-		timeList.Add (3);
-		timeList.Add (4);
+		timeList.Add (intervalTime);
+		timeList.Add (intervalTime*2);
+		timeList.Add (intervalTime*3);
+		timeList.Add (intervalTime*4);
 
 		battleDic.Add ("2211", new BattleEventAttack());
 		battleDic.Add ("1122", new BattleEventDefense());
@@ -50,6 +47,11 @@ public class RythmeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		System.Action<IEventType> callback = turn_Start;
+		EventMgr.It.register(new BattleTurnStartEvent(),callback);
+		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
+		EventMgr.It.queueEvent (btse);
+
 		if (isEnd) {
 			return;
 		}
