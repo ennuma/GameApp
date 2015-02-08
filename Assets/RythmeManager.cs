@@ -9,6 +9,7 @@ public class RythmeManager : MonoBehaviour {
 	private float dropTime;
 	private float creatTime;
 	private int rythmeCount;
+	private GameObject enemyai;
 	//Local game time 
 	private float currentTime;
 	private List<float> timeList = new List<float>();
@@ -20,6 +21,8 @@ public class RythmeManager : MonoBehaviour {
 	public float normal;
 	public float good;
 	public float perfect;
+	public GameObject StartPoint;
+
 
 	//flag to indicate if turn ends
 	private bool isEnd;
@@ -30,18 +33,20 @@ public class RythmeManager : MonoBehaviour {
 		intervalTime = 1;
 		//get dropTime from DATABASE 
 		dropTime = 2;
+
+
+		Debug.Log("in Start");
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
 		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
 		EventMgr.It.queueEvent (btse);
 
-		Debug.Log("in Start");
 
 		//Timelist should get from database , here fake a timelist to test
-		timeList.Add (1);
-		timeList.Add (2);
-		timeList.Add (3);
-		timeList.Add (4);
+		timeList.Add (intervalTime);
+		timeList.Add (intervalTime*2);
+		timeList.Add (intervalTime*3);
+		timeList.Add (intervalTime*4);
 
 		battleDic.Add ("2211", new BattleEventAttack());
 		battleDic.Add ("1122", new BattleEventDefense());
@@ -50,6 +55,8 @@ public class RythmeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		if (isEnd) {
 			return;
 		}
@@ -67,7 +74,7 @@ public class RythmeManager : MonoBehaviour {
 	}
 
 	public void onRightButtonClick(){
-		Debug.Log("RightButtonClick");
+		//Debug.Log("RightButtonClick");
 		int currentCount = resultList.Count;
 		if (currentCount > 3) {
 			return;		
@@ -85,6 +92,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+			GameObject dragon = NGUITools.AddChild (gameObject, Resources.Load ("Normal") as GameObject);
+			dragon.transform.position = StartPoint.transform.position;
 			return;
 		}else if(absdelta > good)
 		{
@@ -112,7 +121,7 @@ public class RythmeManager : MonoBehaviour {
 
 	
 	public void onLeftButtonClick(){
-		Debug.Log("LeftButtonClick");
+		//Debug.Log("LeftButtonClick");
 		int currentCount = resultList.Count;
 		if (currentCount > 3) {
 			return;		
@@ -162,7 +171,7 @@ public class RythmeManager : MonoBehaviour {
 
 
 	void turn_Start(IEventType turnStartEvent){
-		Debug.Log("in RythmeManager turn_Start: \n");
+		//Debug.Log("in RythmeManager turn_Start: \n");
 		creatTime = 0;
 		currentTime = 0;
 		rythmeCount = 0;
@@ -182,7 +191,7 @@ public class RythmeManager : MonoBehaviour {
 		float upperbound = nextCheckingTime + bad;
 		if (currentTime > upperbound) {
 			//miss
-			Debug.Log("MISS");
+			//Debug.Log("MISS");
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.miss, 4);
 			resultList.Add(rs);
 		}
@@ -208,7 +217,7 @@ public class RythmeManager : MonoBehaviour {
 				qualityResult = qualityResult + rs.quality;
 		
 			}
-			Debug.Log(instResult);
+			//Debug.Log(instResult);
 			if(battleDic.ContainsKey(instResult)){
 				Dictionary<string, BattleEvent>  newDic = new Dictionary<string, BattleEvent>(battleDic); 
 				BattleEvent returnEvent = newDic[instResult];
@@ -227,14 +236,12 @@ public class RythmeManager : MonoBehaviour {
 
 			}
 
-			Debug.Log("in check result");
-
-			BattleEventDefense enemy = new BattleEventDefense ();
-			enemy.self_id = 1;
-			enemy.rhythm_quality=1;
-			EventMgr.It.queueEvent (enemy);
-			rythmBehavior.destoryRythmObj();
-		
+			//Testing, enemy event
+//			BattleEventDefense enemy = new BattleEventDefense ();
+//			enemy.self_id = 1;
+//			enemy.rhythm_quality=1;
+//			EventMgr.It.queueEvent (enemy);
+			rythmBehavior.destoryRythmObj();		
 		}
 	}
 

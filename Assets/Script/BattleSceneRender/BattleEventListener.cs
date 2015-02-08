@@ -50,7 +50,7 @@ public class BattleEventListener: MonoBehaviour
 	 * In charge of handling all UI events related to the battle_turn_info
 	 **/
 	private void Battle_Turn_Info_Handler(IEventType evnt){
-		Debug.Log ("in battle turn infor handler");
+		//Debug.Log ("in battle turn infor handler");
 		BattleTurnInfoEvent m_evnt = evnt as BattleTurnInfoEvent;
 		Dictionary<string, int> self_dic = new Dictionary<string, int>();
 		Dictionary<string, int> enemy_dic = new Dictionary<string, int>();
@@ -59,10 +59,10 @@ public class BattleEventListener: MonoBehaviour
 		enemy_dic = m_evnt.dictionary[1];
 
 		int attack_damage = self_dic["attack_damage"];//damage taken at the end
-		Debug.Log ("attack damage" + attack_damage);
+		//Debug.Log ("attack damage" + attack_damage);
 		int defense_value = self_dic ["defense_value"];//damage blocked
 		int current_turn_action = self_dic ["current_turn_action"];
-		Debug.Log ("current turn action is " + current_turn_action);
+		//Debug.Log ("current turn action is " + current_turn_action);
 		int qi = self_dic ["qi"];
 		int blood = self_dic["blood"];
 		int level = self_dic["level"];
@@ -78,8 +78,12 @@ public class BattleEventListener: MonoBehaviour
 				break;
 		}
 		qiBehavior.destroyDragon();
-		Debug.Log ("qi is " + qi);
-		qiBehavior.createDragon(qi);
+		//Debug.Log ("qi is " + qi);
+		//If the qi is 
+		if (qi < 9) {
+			qiBehavior.createDragon (qi);
+		}
+
 
 		int e_attack_damage = enemy_dic["attack_damage"];//damage taken at the end
 		int e_defense_value = enemy_dic ["defense_value"];//damage blocked
@@ -98,7 +102,7 @@ public class BattleEventListener: MonoBehaviour
 			case 2:
 				break;
 		}
-		Debug.Log ("self blood" + blood);
+		//Debug.Log ("self blood" + blood);
 
 		self_blood.text = "" + blood;
 		self_level.text = "" + level;
