@@ -3430,6 +3430,7 @@ MonoBehaviour:
   good: .200000003
   perfect: .100000001
   StartPoint: {fileID: 0}
+  Quality_pic: {fileID: 0}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1

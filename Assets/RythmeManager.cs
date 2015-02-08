@@ -22,7 +22,7 @@ public class RythmeManager : MonoBehaviour {
 	public float good;
 	public float perfect;
 	public GameObject StartPoint;
-
+	public GameObject Quality_pic;
 
 	//flag to indicate if turn ends
 	private bool isEnd;
@@ -92,8 +92,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 3);
 			resultList.Add(rs);
 			//call rythmeBehavior 
-			GameObject dragon = NGUITools.AddChild (gameObject, Resources.Load ("Normal") as GameObject);
-			dragon.transform.position = StartPoint.transform.position;
+			//GameObject dragon = NGUITools.AddChild (gameObject, Resources.Load ("Normal") as GameObject);
+			//dragon.transform.position = StartPoint.transform.position;
 			return;
 		}else if(absdelta > good)
 		{
@@ -101,6 +101,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 2);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Good") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}else if(absdelta > perfect)
 		{
@@ -108,6 +110,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Exce") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}else
 		{
@@ -115,6 +119,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.right, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Perfect") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}
 	}
@@ -129,6 +135,7 @@ public class RythmeManager : MonoBehaviour {
 		float nextCheckingTime = timeList [currentCount]+dropTime;
 		float timedelta = currentTime - nextCheckingTime;
 		float absdelta = Mathf.Abs (timedelta);
+
 		if (absdelta > bad) {
 			//miss
 			Debug.Log("Invalid");
@@ -149,6 +156,8 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 2);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Good") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}else if(absdelta > perfect)
 		{
@@ -157,6 +166,9 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 1);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Exce") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}else
 		{
@@ -165,6 +177,9 @@ public class RythmeManager : MonoBehaviour {
 			RythmeResult rs = new RythmeResult(RythmeResult.leftOrRight.left, 0);
 			resultList.Add(rs);
 			//call rythmeBehavior 
+
+			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Perfect") as GameObject);
+			node.transform.position = Quality_pic.transform.position;
 			return;
 		}
 	}
