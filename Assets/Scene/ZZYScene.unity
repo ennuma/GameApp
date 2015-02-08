@@ -1568,10 +1568,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rythmBehavior: {fileID: 1588534543}
-  bad: .400000006
-  normal: .300000012
-  good: .200000003
-  perfect: .100000001
+  bad: .300000012
+  normal: .200000003
+  good: .100000001
+  perfect: .0500000007
   StartPoint: {fileID: 1288441152}
   Quality_pic: {fileID: 993819446}
 --- !u!1 &614733465
@@ -2690,7 +2690,7 @@ BoxCollider:
 --- !u!1 &993819446
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100154, guid: c612d40d3758141fbaacd35e273ea2e5, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -2705,7 +2705,7 @@ GameObject:
 --- !u!4 &993819447
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400154, guid: c612d40d3758141fbaacd35e273ea2e5, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 993819446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}

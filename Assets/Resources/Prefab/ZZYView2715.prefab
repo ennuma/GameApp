@@ -1265,6 +1265,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &100154
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400154}
+  m_Layer: 5
+  m_Name: Quality_Pic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -1614,7 +1629,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: .999899983}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &400054
 Transform:
   m_ObjectHideFlags: 1
@@ -1834,7 +1849,7 @@ Transform:
   m_LocalScale: {x: 450, y: 450, z: 450}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &400088
 Transform:
   m_ObjectHideFlags: 1
@@ -1993,6 +2008,7 @@ Transform:
   m_LocalPosition: {x: 14, y: -856, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 400154}
   - {fileID: 400112}
   - {fileID: 400052}
   - {fileID: 400138}
@@ -2012,7 +2028,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: .999899983}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &400114
 Transform:
   m_ObjectHideFlags: 1
@@ -2125,7 +2141,7 @@ Transform:
   m_LocalScale: {x: 450, y: 450, z: 450}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &400132
 Transform:
   m_ObjectHideFlags: 1
@@ -2137,7 +2153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &400134
 Transform:
   m_ObjectHideFlags: 1
@@ -2173,7 +2189,7 @@ Transform:
   m_LocalScale: {x: 450, y: 450, z: 450}
   m_Children: []
   m_Father: {fileID: 400110}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &400140
 Transform:
   m_ObjectHideFlags: 1
@@ -2264,6 +2280,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 0
+--- !u!4 &400154
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.0000067, y: 1201.49365, z: -4500}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400110}
   m_RootOrder: 0
 --- !u!20 &2000000
 Camera:
@@ -3425,12 +3453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rythmBehavior: {fileID: 11400104}
-  bad: .400000006
-  normal: .300000012
-  good: .200000003
-  perfect: .100000001
-  StartPoint: {fileID: 0}
-  Quality_pic: {fileID: 0}
+  bad: .300000012
+  normal: .200000003
+  good: .100000001
+  perfect: .0500000007
+  StartPoint: {fileID: 100086}
+  Quality_pic: {fileID: 100154}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
