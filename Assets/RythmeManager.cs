@@ -181,7 +181,7 @@ public class RythmeManager : MonoBehaviour {
 			GameObject node = NGUITools.AddChild (Quality_pic,Resources.Load ("Quality_Perfect") as GameObject);
 			node.transform.position = Quality_pic.transform.position;
 			//node.transform.localScale += Vector3(0.1,0.1,0);
-			node.transform.localScale += new Vector3(0.1f,0,0);
+			//node.transform.localScale += new Vector3(0.1f,0,0);
 			return;
 		}
 	}
