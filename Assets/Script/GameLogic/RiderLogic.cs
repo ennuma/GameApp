@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 public class RiderLogic: ActorLogic
 {
-	Dictionary<string,List<List<int>>> skillDic = new Dictionary<string, List<List<int>>>();
 	public RiderLogic()
 	{
 	}
 
-	public void init(int health2, int atk2, int def2, int qi2, int level2, int id2)
+	public override void init(int health2, int atk2, int def2, int qi2, int level2, int id2)
 	{
 		this.health = health2;
 		this.atk = atk2;
@@ -19,7 +18,7 @@ public class RiderLogic: ActorLogic
 		this.character = "rider";
 		this.isDead = false;
 
-		initSkill ();
+		//initSkill ();
 	}
 
 	private void initSkill()
@@ -36,7 +35,7 @@ public class RiderLogic: ActorLogic
 
 	public override int getValueForSkill(string skillname, int level, int quality)
 	{
-
+	
 		return skillDic [skillname] [level] [quality];
 	}
 }

@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+
 public class GameLogic : MonoBehaviour {
 
 	//instance for player
-	private RiderLogic player;
+	private ActorLogic player;
 	//instance for enemy
-	private RiderLogic enemy;
+	private ActorLogic enemy;
 	//dictionary for actormap, map id to actorlogic. 0 for player, 1 for enemy
 	private Dictionary<int,ActorLogic> actormap = new Dictionary<int,ActorLogic>();
 	//info
@@ -32,10 +34,11 @@ public class GameLogic : MonoBehaviour {
 		EventMgr.It.register (new BattleTurnEndEvent (), turnendHandler);
 
 		//rider
-		player = new RiderLogic();
-		player.init (50, 2, 0, 0, 1, 1);
+		//player = new RiderLogic();
+		//player.init (50, 2, 0, 0, 1, 1);
+		player = LoadEntity("Player");
 		//rider
-		enemy = new RiderLogic();
+		enemy = LoadEntity("Enemy");
 		enemy.init (50, 2, 0, 0, 1, 1);
 		//test
 		actormap.Add (0, player);
@@ -48,6 +51,51 @@ public class GameLogic : MonoBehaviour {
 	
 	}
 
+
+	public ActorLogic LoadEntity(string FileName)
+	{
+		StreamReader reader;
+		reader = new StreamReader("Assets/Resources/Data/" + FileName);
+		ActorLogic ret = null;
+
+		while(reader.Peek()>=0)
+		{
+			string line = reader.ReadLine();
+			string[] list = line.Split(':');
+			//Debug.Log(line);
+
+			string type = list[0];
+			if(type.Equals("name"))
+			{
+				if(list[1].Equals("rider"))
+				{
+					ret = new RiderLogic();
+				}
+			}
+			if(type.Equals("init"))
+			{
+				string[] data = list[1].Split(' ');
+				int health = int.Parse(data[0]);
+				int atk = int.Parse(data[1]);
+				int def = int.Parse(data[2]);	
+				int qi = int.Parse(data[3]);
+				int level = int.Parse(data[4]);
+				int id = int.Parse(data[5]);
+				ret.init(health,atk,def,qi,level,id);
+			}
+			if(type.Equals("skill"))
+			{
+				string skillname = list[1];
+				string skilldata = list[2];
+				Debug.Log(skillname);
+
+				List<List<int>> atk = ret.buildSkill(skilldata);
+				ret.skillDic.Add (skillname, atk);
+			}
+		}
+		reader.Close();
+		return ret;
+	}
 	/**
 	Method Name: defHandler
 	Description: handler attack event
