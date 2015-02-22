@@ -23,7 +23,8 @@ public class BattleEventListener: MonoBehaviour
 	public UILabel enemy_defense;
 	public UILabel enemy_attack;
 	public RythmBehavior qiBehavior;
-
+	public PlayerController pc;
+	public EnemyController ec;
 	public BattleEventListener ()
 	{
 //		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
@@ -43,7 +44,6 @@ public class BattleEventListener: MonoBehaviour
 		enemy_defense.text = "10";
 		enemy_attack.text = "10";
 		qiBehavior.createDragon(0);
-
 	}
 
 	/**
@@ -77,6 +77,8 @@ public class BattleEventListener: MonoBehaviour
 			case 2:
 				break;
 		}
+		pc.setSpeed(1.0f);
+		ec.setSpeed (-1.0f);
 		qiBehavior.destroyDragon();
 		//Debug.Log ("qi is " + qi);
 		//If the qi is 

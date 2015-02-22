@@ -546,7 +546,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 172656066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.559712529, y: -.222551316, z: -10}
+  m_LocalPosition: {x: -.559712529, y: 20, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 526272032}
@@ -833,8 +833,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251244609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15792775, y: -.616856575, z: -10}
-  m_LocalScale: {x: -.493041396, y: .493041545, z: 1}
+  m_LocalPosition: {x: 1, y: -.600000024, z: -10}
+  m_LocalScale: {x: -.5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1758678009}
   m_RootOrder: 2
@@ -880,19 +880,15 @@ SpriteRenderer:
 --- !u!114 &251244613
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: c612d40d3758141fbaacd35e273ea2e5,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251244609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8932ce11dbb44fb598195411b9907db, type: 3}
+  m_Script: {fileID: 11500000, guid: 398ae55e46a6c404aaac1179031233a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  isMoving: 0
-  isAttacking: 0
-  tickdown: 0
+  enemy_stop: {fileID: 1219241582}
 --- !u!1 &276430276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,6 +1659,8 @@ MonoBehaviour:
   enemy_defense: {fileID: 1688164439}
   enemy_attack: {fileID: 435024565}
   qiBehavior: {fileID: 1588534543}
+  pc: {fileID: 1416767354}
+  ec: {fileID: 251244613}
 --- !u!1 &624868183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3375,33 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: c0b9a0ca677ec4711ac992a2cf676202, type: 2}
   mSpriteName: blade
   mFillCenter: 1
+--- !u!1 &1219241582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1219241583}
+  m_Layer: 0
+  m_Name: EnemyStoppingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219241583
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1219241582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .200000003, y: -.600000024, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1758678009}
+  m_RootOrder: 5
 --- !u!1 &1237486548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,8 +3954,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416767350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.92693472, y: -.626052916, z: -10}
-  m_LocalScale: {x: .495602965, y: .495604098, z: 1}
+  m_LocalPosition: {x: -1.5, y: -.600000024, z: -10}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1758678009}
   m_RootOrder: 1
@@ -3976,19 +4001,15 @@ SpriteRenderer:
 --- !u!114 &1416767354
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: c612d40d3758141fbaacd35e273ea2e5,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416767350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8932ce11dbb44fb598195411b9907db, type: 3}
+  m_Script: {fileID: 11500000, guid: 10feecfb39eb44a48aa9520b4473d601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  isMoving: 0
-  isAttacking: 0
-  tickdown: 0
+  player_stop: {fileID: 1867357396}
 --- !u!1 &1436231498
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,6 +5147,8 @@ Transform:
   - {fileID: 1416767351}
   - {fileID: 251244610}
   - {fileID: 614733466}
+  - {fileID: 1867357397}
+  - {fileID: 1219241583}
   m_Father: {fileID: 1147854025}
   m_RootOrder: 1
 --- !u!95 &1758678010
@@ -5619,6 +5642,33 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: c0b9a0ca677ec4711ac992a2cf676202, type: 2}
   mSpriteName: characterpanel
   mFillCenter: 1
+--- !u!1 &1867357396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1867357397}
+  m_Layer: 0
+  m_Name: PlayerStoppingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867357397
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867357396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.699999988, y: -.600000024, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1758678009}
+  m_RootOrder: 4
 --- !u!1 &1881754937
 GameObject:
   m_ObjectHideFlags: 0
