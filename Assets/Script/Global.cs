@@ -84,7 +84,7 @@ public class Global : MonoBehaviour {
 			SceneDirector.It.SwitchScene (asset, sceneAnchor.transform);
 			HideWaiting();
 		};
-		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "BattleScene", handler));
+		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "BattleView", handler));
 	}
 
 	public void CreateMainGameView(){

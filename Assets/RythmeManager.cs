@@ -38,9 +38,6 @@ public class RythmeManager : MonoBehaviour {
 		Debug.Log("in Start");
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
-		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
-		EventMgr.It.queueEvent (btse);
-
 
 		//Timelist should get from database , here fake a timelist to test
 		timeList.Add (intervalTime);

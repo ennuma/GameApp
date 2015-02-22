@@ -44,6 +44,10 @@ public class GameLogic : MonoBehaviour {
 		actormap.Add (0, player);
 		actormap.Add (1, enemy);
 
+
+		sendTurnInfo ();
+		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
+		EventMgr.It.queueEvent (btse);
 	}
 	
 	// Update is called once per frame
