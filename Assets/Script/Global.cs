@@ -26,6 +26,7 @@ public class Global : MonoBehaviour {
 	//public SceneMgr SceneMgr{get{return m_SceneMgr;}}
 	public EventMgr SceneMgr{get{return m_EventMgr;}}
 	public BundleMgr BundleMgr{get{return m_BundleMgr;}}
+	public bool debug = false;
 	void Awake(){
 		//It = this;
 #if USE_LOCAL
@@ -60,10 +61,10 @@ public class Global : MonoBehaviour {
 		m_ProtocalMgr = __CreateMgr<ProtocalMgr> ();
 		__CreateMgr<SceneDirector> ();
 
-		if (!m_bDebugMode) {
+		if (!debug) {
 			CreateGameStartView ();
 		}
-		CreateGameStartView ();
+		//CreateGameStartView ();
 	}
 
 	T __CreateMgr<T>() where T:Component{
