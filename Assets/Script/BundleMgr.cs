@@ -41,6 +41,7 @@ public class BundleMgr : MonoBehaviour
 			path += "/";
 			path += resName;
 			asset = Resources.Load (path);
+			//Debug.Log(path);
 			if (asset == null) {
 				throw new UnityException("Resources not found, Scene cannot be initialized!");		
 			}
