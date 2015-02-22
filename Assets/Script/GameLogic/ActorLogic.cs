@@ -20,11 +20,13 @@ public class ActorLogic
 	public int deltaqi = 0;
 	public int deltalevel = 0;
 
+	public Dictionary<string,List<List<int>>> skillDic = new Dictionary<string, List<List<int>>>();
+
 	public ActorLogic()
 	{
 	}
 
-	public void init(int health2, int atk2, int def2, int qi2, int level2, int id2)
+	public virtual void init(int health2, int atk2, int def2, int qi2, int level2, int id2)
 	{
 		this.health = health2;
 		this.atk = atk2;
@@ -37,7 +39,7 @@ public class ActorLogic
 		//buildSkill ();
 	}
 	
-	protected  List<List<int>> buildSkill(string str)
+	public  List<List<int>> buildSkill(string str)
 	{
 		string[] charlist = str.Split ();
 		List<List<int>> ret = new List<List<int>> ();

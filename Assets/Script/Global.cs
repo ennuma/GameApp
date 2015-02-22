@@ -58,12 +58,12 @@ public class Global : MonoBehaviour {
 		m_NetMgr = __CreateMgr<NetMgr> ();
 		m_BundleMgr = __CreateMgr<BundleMgr> ();
 		m_ProtocalMgr = __CreateMgr<ProtocalMgr> ();
-		//__CreateMgr<SceneMgr> ();
+		__CreateMgr<SceneDirector> ();
 
 		if (!m_bDebugMode) {
 			CreateGameStartView ();
 		}
-		//CreateGameStartView ();
+		CreateGameStartView ();
 	}
 
 	T __CreateMgr<T>() where T:Component{
@@ -80,10 +80,11 @@ public class Global : MonoBehaviour {
 		//Debug.Log(m_BundleMgr);
 		ShowWaiting ();
 		System.Action<Object> handler = (asset) => {
+			//Debug.Log(asset);
 			SceneDirector.It.SwitchScene (asset, sceneAnchor.transform);
 			HideWaiting();
 		};
-		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "StartView", handler));
+		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "BattleScene", handler));
 	}
 
 	public void CreateMainGameView(){
@@ -92,7 +93,7 @@ public class Global : MonoBehaviour {
 			SceneDirector.It.SwitchScene (asset, sceneAnchor.transform);
 			HideWaiting();
 		};
-		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "MainView", handler));
+		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "LoginView", handler));
 	}
 
 	public void SendMsg(string data){
