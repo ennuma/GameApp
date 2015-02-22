@@ -48,4 +48,7 @@ public class PlayerController : MonoBehaviour {
 			animator.SetFloat("Speed",speed);		
 		}
 	}
+	public void setDead(bool isDead){
+		animator.SetBool("isDead", isDead);
+	}
 }

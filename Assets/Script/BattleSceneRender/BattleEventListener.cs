@@ -25,6 +25,7 @@ public class BattleEventListener: MonoBehaviour
 	public RythmBehavior qiBehavior;
 	public PlayerController pc;
 	public EnemyController ec;
+	private static bool first_round = true;
 	public BattleEventListener ()
 	{
 //		EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
@@ -33,16 +34,6 @@ public class BattleEventListener: MonoBehaviour
 		System.Action<IEventType> callback = Battle_Turn_Info_Handler;
 		EventMgr.It.register(new BattleTurnInfoEvent(),callback);
 
-		//EventMgr.It.queueEvent (new BattleTurnInfoEvent ());
-		self_blood.text = "12";
-		self_level.text = "12";
-		self_attack.text = "12";
-		self_defense.text = "12";
-		
-		enemy_blood.text = "10";
-		enemy_level.text = "10";
-		enemy_defense.text = "10";
-		enemy_attack.text = "10";
 		qiBehavior.createDragon(0);
 	}
 
@@ -66,26 +57,6 @@ public class BattleEventListener: MonoBehaviour
 		int qi = self_dic ["qi"];
 		int blood = self_dic["blood"];
 		int level = self_dic["level"];
-		switch (current_turn_action) {
-			//Attack
-			case 0:
-				break;
-			//Defense
-			case 1:
-				break;
-			//Skill
-			case 2:
-				break;
-		}
-		pc.setSpeed(1.0f);
-		ec.setSpeed (-1.0f);
-		qiBehavior.destroyDragon();
-		//Debug.Log ("qi is " + qi);
-		//If the qi is 
-		if (qi < 9) {
-			qiBehavior.createDragon (qi);
-		}
-
 
 		int e_attack_damage = enemy_dic["attack_damage"];//damage taken at the end
 		int e_defense_value = enemy_dic ["defense_value"];//damage blocked
@@ -93,17 +64,55 @@ public class BattleEventListener: MonoBehaviour
 		int e_qi = enemy_dic ["qi"];
 		int e_blood = enemy_dic["blood"];
 		int e_level = enemy_dic["level"];
-		switch (e_current_turn_action) {
-			//Attack
-			case 0:
-				break;
-			//Defense
-			case 1:
-				break;
-			//Skill
-			case 2:
-				break;
+
+		if (!first_round) {
+			Debug.Log ("current round action" + current_turn_action);
+						switch (current_turn_action) {
+						//Attack
+						case 0:
+							
+						break;
+						//Defense
+						case 1:
+								break;
+						//Skill
+						case 2:
+								break;
+						}
+						pc.setSpeed (1.0f);
+						ec.setSpeed (-1.0f);
+						qiBehavior.destroyDragon ();
+						//Debug.Log ("qi is " + qi);
+						//If the qi is 
+						if (qi < 9) {
+								qiBehavior.createDragon (qi);
+						}
+
+
+
+						switch (e_current_turn_action) {
+						//Attack
+						case 0:
+								break;
+						//Defense
+						case 1:
+								break;
+						//Skill
+						case 2:
+								break;
+						}
+
+						//Check if one of the player or both are dead
+						if (blood <= 0) {
+								pc.setDead (true);
+						}
+						if (e_blood <= 0) {
+								ec.setDead (true);
+						}
+				} else {
+			first_round = false;		
 		}
+		
 		//Debug.Log ("self blood" + blood);
 
 		self_blood.text = "" + blood;
