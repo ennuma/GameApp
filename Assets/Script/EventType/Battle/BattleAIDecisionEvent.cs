@@ -29,12 +29,18 @@ public class BattleAIDecisionEvent:BattleEvent
 		set {m_enemy_decision = value;}
 	}
 	
+	public int rhythm_quality{
+		get {return m_rhythm_quality; } 
+		set {m_rhythm_quality = value ; }
+	}
+	
 	public int player_decision{
 		get	{return m_player_decision;}
 		set {m_player_decision = value;}
 	}
 	
 	public int m_self_id;
+	public int m_rhythm_quality;
 	public int m_enemy_decision;
 	public int m_player_decision;
 	public string  m_type = "BATTLEAIDECISIONEVENT";
