@@ -27,11 +27,16 @@ public class GameLogic : MonoBehaviour {
 		System.Action<IEventType> missCallback = missHandler;
 		EventMgr.It.register (new BattleEventMiss (), missCallback);
 
+		System.Action<IEventType> skillCallback = skillHandler;
+		EventMgr.It.register (new BattleEventSkill (), skillCallback);
+
 		System.Action<IEventType> qiCallback = qiHandler;
 		EventMgr.It.register (new BattleEventQi (), qiCallback);
 
 		System.Action<IEventType> turnendCallback = turnendHandler;
 		EventMgr.It.register (new BattleTurnEndEvent (), turnendHandler);
+
+
 
 		//rider
 		player = new RiderLogic();
@@ -196,7 +201,43 @@ public class GameLogic : MonoBehaviour {
 		ActorLogic target = actormap [enemyid];
 		
 		from.currentTurnAction = 3;
-		//from.dmgBlocked = dmg;
+		//Debug.Log ("defend is : "+ dmg.ToString());
+		
+		tryEndTurn ();
+	}
+
+	/**
+	Method Name: skillHandler
+	Description: handler defend event
+	 **/
+	private void skillHandler(IEventType evnt){
+		//Debug.Log("miss event received");
+		if (player.isDead || enemy.isDead) {
+			return;		
+		}
+		BattleEventSkill m_evnt = evnt as BattleEventSkill;
+		
+		
+		int quality = m_evnt.rhythm_quality;
+		int id = m_evnt.self_id;
+		int skill = m_evnt.skill_id;
+
+		string skillname = actormap [id].skillNameList [skill];
+		int dmg = 0;
+		dmg = actormap [id].getValueForSkill (skillname, 0, quality);
+		//need to fix in later version this damage is not thread safe
+		int enemyid = -1;
+		if (id == 0) {
+			enemyid = 1;
+		} else {
+			enemyid=0;
+		}
+
+		ActorLogic from = actormap [id];
+		ActorLogic target = actormap [enemyid];
+		
+		from.currentTurnAction = 2;
+		target.dmgTaken = dmg;
 		//Debug.Log ("defend is : "+ dmg.ToString());
 		
 		tryEndTurn ();
