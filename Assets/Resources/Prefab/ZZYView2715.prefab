@@ -3721,6 +3721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   urlResources: 
   sceneAnchor: {fileID: 0}
+  debug: 0
 --- !u!114 &11400046
 MonoBehaviour:
   m_ObjectHideFlags: 1
