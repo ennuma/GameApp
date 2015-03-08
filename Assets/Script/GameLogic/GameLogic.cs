@@ -35,11 +35,11 @@ public class GameLogic : MonoBehaviour {
 
 		//rider
 		player = new RiderLogic();
-		player.init (10, 2, 0, 0, 1, 1);
+		player.init (2, 2, 0, 0, 1, 1);
 		//player = LoadEntity("Player");
 		//rider
 		enemy = new RiderLogic();
-		enemy.init (10, 2, 0, 0, 1, 1);
+		enemy.init (2, 2, 0, 0, 1, 1);
 		//test
 		actormap.Add (0, player);
 		actormap.Add (1, enemy);
