@@ -21,7 +21,7 @@ public class ActorLogic
 	public int deltalevel = 0;
 
 	public Dictionary<string,List<List<int>>> skillDic = new Dictionary<string, List<List<int>>>();
-
+	public List<string> skillNameList = new List<string>();
 	public ActorLogic()
 	{
 	}

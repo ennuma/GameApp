@@ -31,6 +31,8 @@ public class RiderLogic: ActorLogic
 
 		List<List<int>> nuzhan = buildSkill("10 6 4 0 11 7 5 0 12 8 6 0 13 9 7 0 15 11 9 0 17 13 11 0 19 15 13 0 21 17 15 0 23 19 17 0 27 23 21 0");
 		skillDic.Add ("nuzhan", nuzhan);
+
+		skillNameList.Add("nuzhan");
 	}
 
 	public override int getValueForSkill(string skillname, int level, int quality)
