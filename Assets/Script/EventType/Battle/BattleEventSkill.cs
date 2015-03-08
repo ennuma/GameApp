@@ -19,6 +19,14 @@ public class BattleEventSkill:BattleEvent
 	{
 		m_type = "BATTLEEVENTSKILL";
 	}
+
+	public BattleEventSkill (int i)
+	{
+		m_type = "BATTLEEVENTSKILL";
+		this.m_skill_id = i; 
+	}
+
+
 	public string type	
 	{
 		get { return m_type; }

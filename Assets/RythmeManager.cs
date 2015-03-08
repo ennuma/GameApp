@@ -16,9 +16,11 @@ public class RythmeManager : MonoBehaviour {
 	private List<RythmeResult> resultList = new List<RythmeResult>();
 	private Dictionary<string, BattleEvent> battleDic = new Dictionary<string, BattleEvent>();
 
-	// Player AI
-	private bool enableAI;
-	public EnemyAI AIController;
+	//AI
+	private bool m_enableAI;
+	public GameObject autoCheck;
+	public EnemyAI ai;
+	// LISTEN TO ENEMYAI , GET AI EVENT (CONTAINS THE DECISION OF EVENT)
 
 	//value for range
 	public float bad;
@@ -31,6 +33,26 @@ public class RythmeManager : MonoBehaviour {
 	//flag to indicate if turn ends
 	private bool isEnd;
 
+
+	public bool enableAI	
+	{
+		get { return m_enableAI; }
+		set { m_enableAI = value; }
+	}
+
+	
+	public void turnAI(){
+		m_enableAI = !m_enableAI;
+		if (m_enableAI) {
+			autoCheck.SetActive (true);
+		} else {
+			autoCheck.SetActive(false);
+		}
+		Debug.Log("press Auto: " + m_enableAI);
+	}
+
+
+
 	// Use this for initialization
 	void Start () {
 		//get interval time (second) from Database
@@ -38,7 +60,7 @@ public class RythmeManager : MonoBehaviour {
 		//get dropTime from DATABASE 
 		dropTime = 2;
 
-		enableAI = false;
+
 		Debug.Log("in Start");
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
@@ -52,7 +74,7 @@ public class RythmeManager : MonoBehaviour {
 		battleDic.Add ("2211", new BattleEventAttack());
 		battleDic.Add ("1122", new BattleEventDefense());
 		battleDic.Add ("2222", new BattleEventQi());
-//		battleDic.Add ("1212", new BattleEvent)
+		battleDic.Add ("1212", new BattleEventSkill (0));
 	}
 	
 	// Update is called once per frame
@@ -87,9 +109,6 @@ public class RythmeManager : MonoBehaviour {
 		if (absdelta > bad) {
 			//miss
 			//call rythmeBehavior invalid
-			if(!enableAI){
-				// add miss info 
-			}
 			return;		
 		}else if(absdelta > normal)
 		{
@@ -145,9 +164,6 @@ public class RythmeManager : MonoBehaviour {
 			//miss
 			Debug.Log("Invalid");
 			//call rythmeBehavior 
-			if(!enableAI){
-			// add miss info 
-			}
 			return;		
 		}else if(absdelta > normal)
 		{
@@ -222,16 +238,7 @@ public class RythmeManager : MonoBehaviour {
 		}
 	}
 
-	public void enableAuto(){
-		enableAI = !enableAI;
-	}
-
 	void checkResult(){
-
-		if (enableAI) {
-
-		
-		}
 
 		string instResult = "";
 		int qualityResult = 0;
@@ -277,11 +284,6 @@ public class RythmeManager : MonoBehaviour {
 //			EventMgr.It.queueEvent (enemy);
 			rythmBehavior.destoryRythmObj();		
 		}
-	}
-
-	void AIEventDecision(){
-
-
 	}
 
 }
