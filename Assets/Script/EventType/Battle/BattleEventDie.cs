@@ -1,5 +1,5 @@
 using System;
-public class BattleEventDie:BattleEvent
+public class BattleEventDie:IEventType
 {
 	/**
 	 * self id 0 for player 1 for enemey
