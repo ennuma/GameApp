@@ -7,8 +7,8 @@ public class MusicManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponentInChildren<AudioSource>();
-		if (audio) {
-			audio.Play();		
+		if (GetComponent<AudioSource>()) {
+			GetComponent<AudioSource>().Play();		
 		}
 		timeSinceStart = 0;
 	}

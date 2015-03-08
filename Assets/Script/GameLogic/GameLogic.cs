@@ -34,11 +34,11 @@ public class GameLogic : MonoBehaviour {
 		EventMgr.It.register (new BattleTurnEndEvent (), turnendHandler);
 
 		//rider
-		//player = new RiderLogic();
-		//player.init (50, 2, 0, 0, 1, 1);
-		player = LoadEntity("Player");
+		player = new RiderLogic();
+		player.init (50, 2, 0, 0, 1, 1);
+		//player = LoadEntity("Player");
 		//rider
-		enemy = LoadEntity("Enemy");
+		enemy = new RiderLogic();
 		enemy.init (50, 2, 0, 0, 1, 1);
 		//test
 		actormap.Add (0, player);

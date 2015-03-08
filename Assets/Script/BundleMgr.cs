@@ -43,7 +43,7 @@ public class BundleMgr : MonoBehaviour
 			asset = Resources.Load (path);
 			//Debug.Log(path);
 			if (asset == null) {
-				throw new UnityException("Resources not found, Scene cannot be initialized!");		
+				//throw new UnityException("Resources not found, Scene cannot be initialized!");		
 			}
 		}else{
 			asset = null;

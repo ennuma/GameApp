@@ -35,6 +35,9 @@ public class SceneDirector : MonoBehaviour {
 //		transform.localScale = new Vector3(h*cam.aspect,h,0f);
 
 		Destroy (currentScene);
+//		if (currentScene) {
+//			currentScene.SetActive (false);
+//		}
 		currentScene = scene;
 	}
 }

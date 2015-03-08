@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour {
 	public void onFlagClicked()
 	{
 		Debug.Log("flag has been clicked!");
-		Application.Quit ();
+		//Application.Quit ();
 		Global.It.CreateMainGameView ();
 	}
 }

@@ -18,7 +18,7 @@ public class RiderLogic: ActorLogic
 		this.character = "rider";
 		this.isDead = false;
 
-		//initSkill ();
+		initSkill ();
 	}
 
 	private void initSkill()

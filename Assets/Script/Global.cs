@@ -64,7 +64,7 @@ public class Global : MonoBehaviour {
 		if (!debug) {
 			CreateGameStartView ();
 		}
-		//CreateGameStartView ();
+		CreateGameStartView ();
 	}
 
 	T __CreateMgr<T>() where T:Component{
@@ -94,7 +94,7 @@ public class Global : MonoBehaviour {
 			SceneDirector.It.SwitchScene (asset, sceneAnchor.transform);
 			HideWaiting();
 		};
-		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "LoginView", handler));
+		StartCoroutine(m_BundleMgr.CreateGameObject (sBundleName, "HeroView", handler));
 	}
 
 	public void SendMsg(string data){

@@ -29,7 +29,7 @@ public class RythmBehavior : MonoBehaviour {
 		GameObject node = NGUITools.AddChild (gameObject,Resources.Load ("Node") as GameObject);
 		movingNodes.Add(node);
 		node.transform.position = BornPoint.transform.position;
-		node.rigidbody.velocity = new Vector3 (speed, 0, 0);
+		node.GetComponent<Rigidbody>().velocity = new Vector3 (speed, 0, 0);
 		//Invoke("createNewRythmObj",5); // 五秒建造一个rythmobj
 	}
 	public void createDragon(float num){
