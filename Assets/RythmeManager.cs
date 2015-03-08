@@ -16,6 +16,10 @@ public class RythmeManager : MonoBehaviour {
 	private List<RythmeResult> resultList = new List<RythmeResult>();
 	private Dictionary<string, BattleEvent> battleDic = new Dictionary<string, BattleEvent>();
 
+	// Player AI
+	private bool enableAI;
+	public EnemyAI AIController;
+
 	//value for range
 	public float bad;
 	public float normal;
@@ -34,7 +38,7 @@ public class RythmeManager : MonoBehaviour {
 		//get dropTime from DATABASE 
 		dropTime = 2;
 
-
+		enableAI = false;
 		Debug.Log("in Start");
 		System.Action<IEventType> callback = turn_Start;
 		EventMgr.It.register(new BattleTurnStartEvent(),callback);
@@ -48,6 +52,7 @@ public class RythmeManager : MonoBehaviour {
 		battleDic.Add ("2211", new BattleEventAttack());
 		battleDic.Add ("1122", new BattleEventDefense());
 		battleDic.Add ("2222", new BattleEventQi());
+//		battleDic.Add ("1212", new BattleEvent)
 	}
 	
 	// Update is called once per frame
@@ -82,6 +87,9 @@ public class RythmeManager : MonoBehaviour {
 		if (absdelta > bad) {
 			//miss
 			//call rythmeBehavior invalid
+			if(!enableAI){
+				// add miss info 
+			}
 			return;		
 		}else if(absdelta > normal)
 		{
@@ -137,6 +145,9 @@ public class RythmeManager : MonoBehaviour {
 			//miss
 			Debug.Log("Invalid");
 			//call rythmeBehavior 
+			if(!enableAI){
+			// add miss info 
+			}
 			return;		
 		}else if(absdelta > normal)
 		{
@@ -211,7 +222,16 @@ public class RythmeManager : MonoBehaviour {
 		}
 	}
 
+	public void enableAuto(){
+		enableAI = !enableAI;
+	}
+
 	void checkResult(){
+
+		if (enableAI) {
+
+		
+		}
 
 		string instResult = "";
 		int qualityResult = 0;
@@ -257,6 +277,11 @@ public class RythmeManager : MonoBehaviour {
 //			EventMgr.It.queueEvent (enemy);
 			rythmBehavior.destoryRythmObj();		
 		}
+	}
+
+	void AIEventDecision(){
+
+
 	}
 
 }
