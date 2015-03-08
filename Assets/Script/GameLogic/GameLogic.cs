@@ -289,8 +289,23 @@ public class GameLogic : MonoBehaviour {
 			//Debug.Log(evnt.dictionary[1][k]);
 		}
 
+		//die event
+		if (player.isDead) {
+			BattleEventDie die = new BattleEventDie ();
+			die.self_id = 0;
+			EventMgr.It.queueEvent (die);
+		}
+		if (enemy.isDead) {
+			BattleEventDie die = new BattleEventDie ();
+			die.self_id = 1;
+			EventMgr.It.queueEvent (die);		
+		}
+
+
 		player.reset ();
 		enemy.reset ();
+
+
 		//player.currentTurnAction = -1;
 		//enemy.currentTurnAction = -1;
 	}

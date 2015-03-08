@@ -68,6 +68,10 @@ public class ActorLogic
 
 	public void update()
 	{
+		if(isDead)
+		{
+			return;
+		}
 		//Debug.Log (String.Format("damage taken is {0}, damage blocked is {1}", dmgTaken.ToString(), dmgBlocked.ToString()));
 		int delta = dmgTaken-dmgBlocked;
 		if (delta < 0) {
