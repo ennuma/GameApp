@@ -32,6 +32,9 @@ public class EnemyAI : MonoBehaviour {
 			prob_list.Add(20);
 		}
 	}
+	
+	//Queue Events when decision made
+	
 	// Update is called once per frame
 	void Update () {
 		
