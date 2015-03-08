@@ -35,15 +35,14 @@ public class GameLogic : MonoBehaviour {
 
 		//rider
 		player = new RiderLogic();
-		player.init (50, 2, 0, 0, 1, 1);
+		player.init (10, 2, 0, 0, 1, 1);
 		//player = LoadEntity("Player");
 		//rider
 		enemy = new RiderLogic();
-		enemy.init (50, 2, 0, 0, 1, 1);
+		enemy.init (10, 2, 0, 0, 1, 1);
 		//test
 		actormap.Add (0, player);
 		actormap.Add (1, enemy);
-
 
 		sendTurnInfo ();
 		BattleTurnStartEvent btse = new BattleTurnStartEvent ();
@@ -106,6 +105,9 @@ public class GameLogic : MonoBehaviour {
 	 **/
 	private void atkHandler(IEventType evnt){
 		//Debug.Log("atk event received");
+		if (player.isDead || enemy.isDead) {
+			return;		
+		}
 		BattleEventAttack m_evnt = evnt as BattleEventAttack;
 
 		int quality = m_evnt.rhythm_quality;
@@ -137,6 +139,9 @@ public class GameLogic : MonoBehaviour {
 	 **/
 	private void defHandler(IEventType evnt){
 		//Debug.Log("def event received");
+		if (player.isDead || enemy.isDead) {
+			return;		
+		}
 		BattleEventDefense m_evnt = evnt as BattleEventDefense;
 
 
@@ -169,6 +174,9 @@ public class GameLogic : MonoBehaviour {
 	 **/
 	private void missHandler(IEventType evnt){
 		//Debug.Log("miss event received");
+		if (player.isDead || enemy.isDead) {
+			return;		
+		}
 		BattleEventMiss m_evnt = evnt as BattleEventMiss;
 		
 		
@@ -199,7 +207,9 @@ public class GameLogic : MonoBehaviour {
 	Description: handler qi event
 	 **/
 	private void qiHandler(IEventType evnt){
-		Debug.Log("miss event received");
+		if (player.isDead || enemy.isDead) {
+			return;		
+		}
 		BattleEventQi m_evnt = evnt as BattleEventQi;
 		
 		
