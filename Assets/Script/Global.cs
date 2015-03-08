@@ -64,7 +64,7 @@ public class Global : MonoBehaviour {
 		if (!debug) {
 			CreateGameStartView ();
 		}
-		CreateGameStartView ();
+		//CreateGameStartView ();
 	}
 
 	T __CreateMgr<T>() where T:Component{
